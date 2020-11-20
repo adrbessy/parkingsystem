@@ -13,22 +13,24 @@ public class FareCalculatorService {
 		}
 		Calendar in = Calendar.getInstance();
 		in.setTime(ticket.getInTime());
+		int inDay = in.get(Calendar.DAY_OF_MONTH);
 		int inHour = in.get(Calendar.HOUR_OF_DAY);
 		int inMinute = in.get(Calendar.MINUTE);
 		inMinute = inHour * 60 + inMinute;
 		Calendar out = Calendar.getInstance();
 		out.setTime(ticket.getOutTime());
+		int outDay = out.get(Calendar.DAY_OF_MONTH);
 		int outHour = out.get(Calendar.HOUR_OF_DAY);
 		int outMinute = out.get(Calendar.MINUTE);
 		outMinute = outHour * 60 + outMinute;
 
 		// TODO: Some tests are failing here. Need to check if this logic is correct
 		double duration;
-		if (inMinute == outMinute) {
-			duration = 24;
+		if (inMinute >= outMinute) {
+			duration = (outDay - inDay) * 24 - inMinute / 60 + outMinute / 60;
 		} else {
 			duration = outMinute - inMinute;
-			duration = duration / 60;
+			duration = (outDay - inDay) * 24 + duration / 60;
 		}
 
 		switch (ticket.getParkingSpot().getParkingType()) {

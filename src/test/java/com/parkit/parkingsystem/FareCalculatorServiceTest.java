@@ -116,7 +116,23 @@ public class FareCalculatorServiceTest {
 	}
 
 	@Test
-	public void calculateFareCarWithMoreThanADayParkingTime() {
+	public void calculateFareCarWith15HoursParkingTime() {
+		// ARRANGE
+		Date inTime = new Date();
+		inTime.setTime(System.currentTimeMillis() - (15 * 60 * 60 * 1000));// 15 hours parking time should give 3/4th
+																			// parking fare
+		Date outTime = new Date();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+
+		ticket.setInTime(inTime);
+		ticket.setOutTime(outTime);
+		ticket.setParkingSpot(parkingSpot);
+		fareCalculatorService.calculateFare(ticket);
+		assertEquals((15 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
+	}
+
+	@Test
+	public void calculateFareCarWithADayParkingTime() {
 		Date inTime = new Date();
 		inTime.setTime(System.currentTimeMillis() - (24 * 60 * 60 * 1000));// 24 hours parking time should give 24 *
 																			// parking fare per hour
@@ -128,6 +144,51 @@ public class FareCalculatorServiceTest {
 		ticket.setParkingSpot(parkingSpot);
 		fareCalculatorService.calculateFare(ticket);
 		assertEquals((24 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
+	}
+
+	@Test
+	public void calculateFareCarWith25HoursParkingTime() {
+		Date inTime = new Date();
+		inTime.setTime(System.currentTimeMillis() - (25 * 60 * 60 * 1000));// 25 hours parking time should give 24 *
+																			// parking fare per hour
+		Date outTime = new Date();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+
+		ticket.setInTime(inTime);
+		ticket.setOutTime(outTime);
+		ticket.setParkingSpot(parkingSpot);
+		fareCalculatorService.calculateFare(ticket);
+		assertEquals((25 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
+	}
+
+	@Test
+	public void calculateFareCarWith35HoursParkingTime() {
+		Date inTime = new Date();
+		inTime.setTime(System.currentTimeMillis() - (39 * 60 * 60 * 1000));// 39 hours parking time should give 24 *
+																			// parking fare per hour
+		Date outTime = new Date();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+
+		ticket.setInTime(inTime);
+		ticket.setOutTime(outTime);
+		ticket.setParkingSpot(parkingSpot);
+		fareCalculatorService.calculateFare(ticket);
+		assertEquals((39 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
+	}
+
+	@Test
+	public void calculateFareCarWith50HoursParkingTime() {
+		Date inTime = new Date();
+		inTime.setTime(System.currentTimeMillis() - (50 * 60 * 60 * 1000));// 50 hours parking time should give 24 *
+																			// parking fare per hour
+		Date outTime = new Date();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+
+		ticket.setInTime(inTime);
+		ticket.setOutTime(outTime);
+		ticket.setParkingSpot(parkingSpot);
+		fareCalculatorService.calculateFare(ticket);
+		assertEquals((50 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
 	}
 
 }
