@@ -1,0 +1,75 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f1de52090ad, pid=33408, tid=33423
+#
+# JRE version: OpenJDK Runtime Environment (11.0.9.1+1) (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.9.1+1-Ubuntu-0ubuntu1.20.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x30ad]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/adrien/Documents/OCR/java/projet4/parkingsystem/core.33408)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:34003 -ea -javaagent:/home/adrien/eclipse/configuration/org.eclipse.osgi/401/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 41291 -testLoaderClass org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader -loaderpluginname org.eclipse.jdt.junit5.runtime -classNames com.parkit.parkingsystem.FareCalculatorServiceTest
+
+Host: Intel(R) Pentium(R) CPU G645 @ 2.90GHz, 2 cores, 11G, Ubuntu 20.04.1 LTS
+Time: Thu Nov 19 18:38:43 2020 CET elapsed time: 1561.652062 seconds (0d 0h 26m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f1ddc1d0000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=33423, stack(0x00007f1de0658000,0x00007f1de0759000)]
+
+Stack: [0x00007f1de0658000,0x00007f1de0759000],  sp=0x00007f1de07561f0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x30ad]
+C  [libjimage.so+0x3da2]
+C  [libjimage.so+0x42b1]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x5ae8d1]
+V  [libjvm.so+0x5b1081]
+V  [libjvm.so+0xde0f0d]
+V  [libjvm.so+0xddfa9a]
+V  [libjvm.so+0xde205b]
+V  [libjvm.so+0x66062e]
+V  [libjvm.so+0x84ec06]
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.9.1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8575d9]
+V  [libjvm.so+0x8565f2]
+V  [libjvm.so+0xbc09fe]
+V  [libjvm.so+0xe17ccf]
+V  [libjvm.so+0xe14330]
+V  [libjvm.so+0xbd26e6]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.9.1
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f1dd389e270
+
+Register to memory mapping:
+
+RAX=0x0000000000001495 is an unknown value
+RBX=0x00007f1de07562a1 is pointing into the stack for thread: 0x00007f1ddc1d0000
+RCX=0x00007f1de07562c3 is pointing into the stack for thread: 0x00007f1ddc1d0000
+RDX=0x0000000000001495 is an unknown value
+RSP=0x00007f1de07561f0 is pointing into the stack for thread: 0x00007f1ddc1d0000
+RBP=0x00007f1de0756210 is pointing into the stack for thread: 0x00007f1ddc1d0000
+RSI=0x0 is NULL
+RDI=0x00007f1de520e030: <offset 0x0000000000008030> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f1de5206000
+R8 =0x00007f1dd389901c is an unknown value
+R9 =0x65746e692f6b646a is an unknown value
+R10=0x73696d2f6c616e72 is an unknown value
+R11=0x6c616e6769532f63 is an unknown value
+R12=0x0000000000008412 is an unknown value
+R13=0x00007f1de07562a0 is pointing into the stack for thread: 0x00007f1ddc1d0000
+R14=0x0 is NULL
+R15=0x00007f1ddc1d0ac0 points into unknown readable memory: 6a 64 6b 2f 69 6e 74 65
+
+
+Registers:
