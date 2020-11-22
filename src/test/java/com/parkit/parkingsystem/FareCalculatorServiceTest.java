@@ -3,14 +3,22 @@ package com.parkit.parkingsystem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Timestamp;
 import java.util.Date;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.parkit.parkingsystem.config.DataBaseConfig;
+import com.parkit.parkingsystem.constants.DBConstants;
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.constants.ParkingType;
+import com.parkit.parkingsystem.dao.TicketDAO;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.FareCalculatorService;
@@ -19,6 +27,8 @@ public class FareCalculatorServiceTest {
 
 	private static FareCalculatorService fareCalculatorService;
 	private Ticket ticket;
+	public DataBaseConfig dataBaseConfig = new DataBaseConfig();
+	private static final Logger logger = LogManager.getLogger("FareCalculatorServiceTest");
 
 	@BeforeAll
 	private static void setUp() {
@@ -189,6 +199,56 @@ public class FareCalculatorServiceTest {
 		ticket.setParkingSpot(parkingSpot);
 		fareCalculatorService.calculateFare(ticket);
 		assertEquals((50 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
+	}
+
+	@Test
+	public void calculateFareCarWithOneRecurringUser() {
+
+		Connection con = null;
+		try {
+			con = dataBaseConfig.getConnection();
+			PreparedStatement ps = con.prepareStatement(DBConstants.SAVE_TICKET);
+			// ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME)
+			ps.setInt(1, 3);
+			ps.setString(2, "XXXXXXXXX");
+			ps.setDouble(3, 0);
+			ps.setTimestamp(4, new Timestamp(System.currentTimeMillis() - (1 * 60 * 60 * 1000)));
+			ps.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
+			ps.execute();
+		} catch (Exception ex) {
+			logger.error("Error setting a ticket", ex);
+		} finally {
+			dataBaseConfig.closeConnection(con);
+		}
+
+		TicketDAO ticketDAO = new TicketDAO();
+		Date inTime = new Date();
+		Date outTime = new Date();
+		outTime.setTime(System.currentTimeMillis() + (1 * 60 * 60 * 1000)); // 1 hour parking time should give 24 *
+																			// parking fare per hour
+		ParkingSpot parkingSpot = new ParkingSpot(3, ParkingType.CAR, false);
+		ticket.setVehicleRegNumber("XXXXXXXXX");
+		ticket.setInTime(inTime);
+		ticket.setParkingSpot(parkingSpot);
+		ticketDAO.saveTicket(ticket);
+		ticket.setRecurringUser(ticketDAO.checkRecurringUser(ticket));
+		ticket.setOutTime(outTime);
+		fareCalculatorService.calculateFare(ticket);
+		double price = ticket.getPrice();
+
+		Connection con2 = null;
+		try {
+			con2 = dataBaseConfig.getConnection();
+			PreparedStatement ps = con2.prepareStatement(DBConstants.DELETE_ROWS);
+			ps.execute();
+		} catch (Exception ex) {
+			logger.error("Error deleting tickets", ex);
+		} finally {
+			dataBaseConfig.closeConnection(con2);
+		}
+
+		assertEquals(((1 * Fare.CAR_RATE_PER_HOUR) - 5 * (1 * Fare.CAR_RATE_PER_HOUR) / 100), price); // 5%
+																										// discount
 	}
 
 }

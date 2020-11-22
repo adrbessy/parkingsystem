@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -86,5 +87,31 @@ public class TicketDAO {
 			dataBaseConfig.closeConnection(con);
 		}
 		return false;
+	}
+
+	public boolean checkRecurringUser(Ticket ticket) {
+		Connection con = null;
+		ArrayList<String> VEHICLE_REG_NUMBER_List = new ArrayList<String>();
+		try {
+			con = dataBaseConfig.getConnection();
+			PreparedStatement ps = con.prepareStatement(DBConstants.GET_VEHICLE_REG_NUMBER);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				VEHICLE_REG_NUMBER_List.add(rs.getString(1));
+			}
+			if (!VEHICLE_REG_NUMBER_List.isEmpty()) {
+				VEHICLE_REG_NUMBER_List.remove(VEHICLE_REG_NUMBER_List.size() - 1);
+			}
+		} catch (Exception ex) {
+			logger.error("Error fetching recurrent user", ex);
+		} finally {
+			dataBaseConfig.closeConnection(con);
+		}
+		String myVehicleRegNumber = ticket.getVehicleRegNumber();
+		if (VEHICLE_REG_NUMBER_List.contains(myVehicleRegNumber)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
