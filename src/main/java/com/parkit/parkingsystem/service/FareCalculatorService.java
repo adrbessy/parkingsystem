@@ -24,7 +24,6 @@ public class FareCalculatorService {
 		int outMinute = out.get(Calendar.MINUTE);
 		outMinute = outHour * 60 + outMinute;
 
-		// TODO: Some tests are failing here. Need to check if this logic is correct
 		double duration;
 		if (inMinute >= outMinute) {
 			duration = (outDay - inDay) * 24 - inMinute / 60 + outMinute / 60;
@@ -35,11 +34,21 @@ public class FareCalculatorService {
 
 		switch (ticket.getParkingSpot().getParkingType()) {
 		case CAR: {
-			ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR);
+			if (ticket.getRecurringUser()) {
+				ticket.setPrice(
+						(duration * Fare.CAR_RATE_PER_HOUR) - 5 * (duration * Fare.CAR_RATE_PER_HOUR) / 100);
+			} else {
+				ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR);
+			}
 			break;
 		}
 		case BIKE: {
-			ticket.setPrice(duration * Fare.BIKE_RATE_PER_HOUR);
+			if (ticket.getRecurringUser()) {
+				ticket.setPrice(
+						(duration * Fare.BIKE_RATE_PER_HOUR) - 5 * (duration * Fare.BIKE_RATE_PER_HOUR) / 100);
+			} else {
+				ticket.setPrice(duration * Fare.BIKE_RATE_PER_HOUR);
+			}
 			break;
 		}
 		default:
