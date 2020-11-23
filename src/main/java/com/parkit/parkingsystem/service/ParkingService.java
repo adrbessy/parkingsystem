@@ -92,7 +92,7 @@ public class ParkingService {
 	}
 
 	private ParkingType getVehichleType() {
-		System.out.println("Please select vehicle type from menu");
+		System.out.println("\nPlease select vehicle type from menu");
 		System.out.println("1 CAR");
 		System.out.println("2 BIKE");
 		int input = inputReaderUtil.readSelection();

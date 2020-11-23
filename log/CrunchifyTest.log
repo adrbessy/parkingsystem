@@ -2478,3 +2478,69 @@ java.util.NoSuchElementException: No line found
 2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
 2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
 2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:32:53 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:32:54 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:32:54 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:32:54 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:32:54 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:32:55 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:32:55 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:32:55 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:49:22 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:49:22 [main] INFO  InteractiveShell:14 - App initialized!!!
+2020-11-23 13:49:31 [main] ERROR InputReaderUtil:18 - Error while reading user input from Shell
+java.lang.NumberFormatException: For input string: "salut"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:652) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:770) ~[?:?]
+	at com.parkit.parkingsystem.util.InputReaderUtil.readSelection(InputReaderUtil.java:15) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:25) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-23 13:53:43 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:53:43 [main] INFO  InteractiveShell:14 - App initialized!!!
+2020-11-23 13:54:46 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:54:46 [main] INFO  InteractiveShell:14 - App initialized!!!
+2020-11-23 13:54:56 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:54:56 [main] INFO  InteractiveShell:14 - App initialized!!!
+2020-11-23 13:55:35 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:55:35 [main] INFO  InteractiveShell:15 - App initialized!!!
+2020-11-23 13:57:30 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:57:30 [main] INFO  InteractiveShell:15 - App initialized!!!
+2020-11-23 13:59:27 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:28 [main] INFO  DataBaseConfig:45 - Closing Result Set
+2020-11-23 13:59:28 [main] INFO  DataBaseConfig:34 - Closing Prepared Statement
+2020-11-23 13:59:28 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:33 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:34 [main] INFO  DataBaseConfig:34 - Closing Prepared Statement
+2020-11-23 13:59:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:34 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:34 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:45 - Closing Result Set
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:34 - Closing Prepared Statement
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:34 - Closing Prepared Statement
+2020-11-23 13:59:44 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 13:59:53 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 13:59:53 [main] INFO  InteractiveShell:15 - App initialized!!!
+2020-11-23 14:00:16 [main] ERROR ParkingService:87 - Error parsing user input for type of vehicle
+java.lang.IllegalArgumentException: Entered input is invalid
+	at com.parkit.parkingsystem.service.ParkingService.getVehichleType(ParkingService.java:108) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:79) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:36) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:29) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-23 14:02:24 [main] INFO  App:10 - Initializing Parking System
+2020-11-23 14:02:24 [main] INFO  InteractiveShell:15 - App initialized!!!
+2020-11-23 14:02:29 [main] ERROR ParkingService:87 - Error parsing user input for type of vehicle
+java.lang.IllegalArgumentException: Entered input is invalid
+	at com.parkit.parkingsystem.service.ParkingService.getVehichleType(ParkingService.java:108) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:79) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:36) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:29) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
