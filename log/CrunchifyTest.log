@@ -2342,3 +2342,139 @@ java.lang.NumberFormatException: For input string: "AA-001-AB"
 2020-11-22 19:16:55 [main] INFO  DataBaseConfig:23 - Closing DB connection
 2020-11-22 19:16:55 [main] INFO  DataBaseConfig:13 - Create DB connection
 2020-11-22 19:16:56 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-22 19:29:53 [main] ERROR InputReaderUtil:18 - Error while reading user input from Shell
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.parkit.parkingsystem.util.InputReaderUtil.readSelection(InputReaderUtil.java:15) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:25) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-22 19:29:53 [main] ERROR InputReaderUtil:18 - Error while reading user input from Shell
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.parkit.parkingsystem.util.InputReaderUtil.readSelection(InputReaderUtil.java:15) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:25) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-22 19:29:53 [main] ERROR InputReaderUtil:18 - Error while reading user input from Shell
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.parkit.parkingsystem.util.InputReaderUtil.readSelection(InputReaderUtil.java:15) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:25) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-22 19:29:53 [main] ERROR InputReaderUtil:18 - Error while reading user input from Shell
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.parkit.parkingsystem.util.InputReaderUtil.readSelection(InputReaderUtil.java:15) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:25) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-23 11:19:21 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:22 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:22 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:22 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:22 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:19:23 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:32 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:33 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:33 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:33 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:33 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:33 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:33 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:38:34 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:48:58 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:48:59 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:48:59 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:48:59 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:48:59 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:49:00 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:25 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:25 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:25 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:52:26 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:06 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:07 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 11:54:08 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:26 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:27 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:03:28 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:50 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:50 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:50 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:13 - Create DB connection
+2020-11-23 12:13:51 [main] INFO  DataBaseConfig:23 - Closing DB connection
