@@ -1,5 +1,6 @@
 package com.parkit.parkingsystem.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.apache.logging.log4j.LogManager;
@@ -51,19 +52,31 @@ public class ParkingService {
 				ticket.setOutTime(null);
 				ticket.setRecurringUser(false);
 				ticketDAO.saveTicket(ticket);
-				ticket.setRecurringUser(ticketDAO.checkRecurringUser(ticket));
-				;
+				ticketDAO.getAllVehicleRegNumber(ticket);
 				System.out.println("Generated Ticket and saved in DB");
-				if (ticket.getRecurringUser()) {
+				if (checkRecurringUser(ticket)) {
 					System.out.println(
 							"Welcome back! As a recurring user of our parking lot, you'll benefit from a 5% discount.");
-					ticket.setRecurringUser(true);
 				}
 				System.out.println("Please park your vehicle in spot number:" + parkingSpot.getId());
 				System.out.println("Recorded in-time for vehicle number:" + vehicleRegNumber + " is:" + inTime);
 			}
 		} catch (Exception e) {
 			logger.error("Unable to process incoming vehicle", e);
+		}
+	}
+
+	public boolean checkRecurringUser(Ticket ticket) {
+		ArrayList<String> VEHICLE_REG_NUMBER_List = ticket.getVehicleRegNumberList();
+		if (!VEHICLE_REG_NUMBER_List.isEmpty()) {
+			VEHICLE_REG_NUMBER_List.remove(VEHICLE_REG_NUMBER_List.size() - 1);
+		}
+		String myVehicleRegNumber = ticket.getVehicleRegNumber();
+		if (VEHICLE_REG_NUMBER_List.contains(myVehicleRegNumber)) {
+			ticket.setRecurringUser(true);
+			return true;
+		} else {
+			return false;
 		}
 	}
 

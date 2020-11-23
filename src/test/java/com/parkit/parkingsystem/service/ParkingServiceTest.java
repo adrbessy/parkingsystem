@@ -1,23 +1,17 @@
 package com.parkit.parkingsystem.service;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Date;
+import java.util.ArrayList;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
-import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 
@@ -25,6 +19,7 @@ import com.parkit.parkingsystem.util.InputReaderUtil;
 public class ParkingServiceTest {
 
 	private static ParkingService parkingService;
+	private Ticket ticket;
 
 	@Mock
 	private static InputReaderUtil inputReaderUtil;
@@ -33,32 +28,66 @@ public class ParkingServiceTest {
 	@Mock
 	private static TicketDAO ticketDAO;
 
-	@BeforeEach
-	private void setUpPerTest() {
-		try {
-			when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
+	@BeforeAll
+	private static void setUp() {
+		parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
+	}
+	/*
+	 * @BeforeEach private void setUpPerTest() { try {
+	 * when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
+	 * 
+	 * ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false); Ticket
+	 * ticket = new Ticket(); ticket.setInTime(new Date(System.currentTimeMillis() -
+	 * (60 * 60 * 1000))); ticket.setParkingSpot(parkingSpot);
+	 * ticket.setVehicleRegNumber("ABCDEF");
+	 * when(ticketDAO.getTicket(anyString())).thenReturn(ticket);
+	 * when(ticketDAO.updateTicket(any(Ticket.class))).thenReturn(true);
+	 * 
+	 * when(parkingSpotDAO.updateParking(any(ParkingSpot.class))).thenReturn(true);
+	 * 
+	 * parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO,
+	 * ticketDAO); } catch (Exception e) { e.printStackTrace(); throw new
+	 * RuntimeException("Failed to set up test mock objects"); } }
+	 * 
+	 * @Test public void processExitingVehicleTest() {
+	 * parkingService.processExitingVehicle(); verify(parkingSpotDAO,
+	 * Mockito.times(1)).updateParking(any(ParkingSpot.class)); }
+	 */
 
-			ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
-			Ticket ticket = new Ticket();
-			ticket.setInTime(new Date(System.currentTimeMillis() - (60 * 60 * 1000)));
-			ticket.setParkingSpot(parkingSpot);
-			ticket.setVehicleRegNumber("ABCDEF");
-			when(ticketDAO.getTicket(anyString())).thenReturn(ticket);
-			when(ticketDAO.updateTicket(any(Ticket.class))).thenReturn(true);
+	@Test
+	public void testCheckRecurringUser() {
+		// ARRANGE
+		ticket = new Ticket();
+		ticket.setRecurringUser(false);
+		ArrayList<String> str = new ArrayList<String>();
+		str.add("ABCDE");
+		str.add("ABCDE");
+		ticket.setVehicleRegNumberList(str);
+		ticket.setVehicleRegNumber("ABCDE");
 
-			when(parkingSpotDAO.updateParking(any(ParkingSpot.class))).thenReturn(true);
+		// ACT
+		boolean recurringUser = parkingService.checkRecurringUser(ticket);
 
-			parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException("Failed to set up test mock objects");
-		}
+		// ASSERT
+		assertEquals(true, recurringUser);
 	}
 
 	@Test
-	public void processExitingVehicleTest() {
-		parkingService.processExitingVehicle();
-		verify(parkingSpotDAO, Mockito.times(1)).updateParking(any(ParkingSpot.class));
+	public void testCheckNoRecurringUser() {
+		// ARRANGE
+		ticket = new Ticket();
+		ticket.setRecurringUser(false);
+		ArrayList<String> str = new ArrayList<String>();
+		str.add("ABCDE");
+		str.add("ABCFF");
+		ticket.setVehicleRegNumberList(str);
+		ticket.setVehicleRegNumber("ABCFF");
+
+		// ACT
+		boolean recurringUser = parkingService.checkRecurringUser(ticket);
+
+		// ASSERT
+		assertEquals(false, recurringUser);
 	}
 
 }

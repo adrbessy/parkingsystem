@@ -89,7 +89,7 @@ public class TicketDAO {
 		return false;
 	}
 
-	public boolean checkRecurringUser(Ticket ticket) {
+	public void getAllVehicleRegNumber(Ticket ticket) {
 		Connection con = null;
 		ArrayList<String> VEHICLE_REG_NUMBER_List = new ArrayList<String>();
 		try {
@@ -99,19 +99,11 @@ public class TicketDAO {
 			while (rs.next()) {
 				VEHICLE_REG_NUMBER_List.add(rs.getString(1));
 			}
-			if (!VEHICLE_REG_NUMBER_List.isEmpty()) {
-				VEHICLE_REG_NUMBER_List.remove(VEHICLE_REG_NUMBER_List.size() - 1);
-			}
+			ticket.setVehicleRegNumberList(VEHICLE_REG_NUMBER_List);
 		} catch (Exception ex) {
 			logger.error("Error fetching recurrent user", ex);
 		} finally {
 			dataBaseConfig.closeConnection(con);
-		}
-		String myVehicleRegNumber = ticket.getVehicleRegNumber();
-		if (VEHICLE_REG_NUMBER_List.contains(myVehicleRegNumber)) {
-			return true;
-		} else {
-			return false;
 		}
 	}
 }
