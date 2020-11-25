@@ -1,15 +1,22 @@
 package com.parkit.parkingsystem.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
 import com.parkit.parkingsystem.model.Ticket;
@@ -18,20 +25,41 @@ import com.parkit.parkingsystem.util.InputReaderUtil;
 @ExtendWith(MockitoExtension.class)
 public class ParkingServiceTest {
 
-	private static ParkingService parkingService;
+	ParkingService parkingService;
 	private Ticket ticket;
+	// private static InputReaderUtil inputReaderUtil;
+	// private static ParkingSpotDAO parkingSpotDAO;
+	// private static TicketDAO ticketDAO;
 
 	@Mock
-	private static InputReaderUtil inputReaderUtil;
-	@Mock
-	private static ParkingSpotDAO parkingSpotDAO;
-	@Mock
-	private static TicketDAO ticketDAO;
+	InputReaderUtil inputReaderUtil = mock(InputReaderUtil.class);
 
-	@BeforeAll
-	private static void setUp() {
+	ParkingSpotDAO parkingSpotDAO;
+
+	TicketDAO ticketDAO;
+
+	@BeforeEach
+	private void setUp() {
 		parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
 	}
+
+	@BeforeEach
+	public void initTicket() {
+		ticket = new Ticket();
+	}
+
+	@AfterEach
+	public void undefTicket() {
+		ticket = null;
+	}
+
+	/*
+	 * @Mock private static InputReaderUtil inputReaderUtil;
+	 * 
+	 * @Mock private static ParkingSpotDAO parkingSpotDAO;
+	 * 
+	 * @Mock private static TicketDAO ticketDAO;
+	 */
 	/*
 	 * @BeforeEach private void setUpPerTest() { try {
 	 * when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
@@ -49,6 +77,7 @@ public class ParkingServiceTest {
 	 * ticketDAO); } catch (Exception e) { e.printStackTrace(); throw new
 	 * RuntimeException("Failed to set up test mock objects"); } }
 	 * 
+	 * 
 	 * @Test public void processExitingVehicleTest() {
 	 * parkingService.processExitingVehicle(); verify(parkingSpotDAO,
 	 * Mockito.times(1)).updateParking(any(ParkingSpot.class)); }
@@ -57,7 +86,6 @@ public class ParkingServiceTest {
 	@Test
 	public void testCheckRecurringUser() {
 		// ARRANGE
-		ticket = new Ticket();
 		ticket.setRecurringUser(false);
 		ArrayList<String> str = new ArrayList<String>();
 		str.add("ABCDE");
@@ -69,13 +97,12 @@ public class ParkingServiceTest {
 		boolean recurringUser = parkingService.checkRecurringUser(ticket);
 
 		// ASSERT
-		assertEquals(true, recurringUser);
+		assertTrue(recurringUser);
 	}
 
 	@Test
 	public void testCheckNoRecurringUser() {
 		// ARRANGE
-		ticket = new Ticket();
 		ticket.setRecurringUser(false);
 		ArrayList<String> str = new ArrayList<String>();
 		str.add("ABCDE");
@@ -87,7 +114,17 @@ public class ParkingServiceTest {
 		boolean recurringUser = parkingService.checkRecurringUser(ticket);
 
 		// ASSERT
-		assertEquals(false, recurringUser);
+		assertFalse(recurringUser);
+	}
+
+	@Test
+	public void testGetVehicleType() {
+		// GIVEN
+		when(inputReaderUtil.readSelection()).thenReturn(1);
+
+		// THEN
+		assertThat(parkingService.getVehicleType()).isEqualTo(ParkingType.CAR);
+		verify(inputReaderUtil).readSelection();
 	}
 
 }
