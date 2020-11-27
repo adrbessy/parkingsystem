@@ -38,7 +38,7 @@ public class FareCalculatorServiceTest {
 	public void testCalculateFareCar(int arg) {
 		// ARRANGE
 		Date inTime = new Date();
-		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000));
+		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000L));
 		Date outTime = new Date();
 		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
 		ticket.setInTime(inTime);
@@ -57,7 +57,7 @@ public class FareCalculatorServiceTest {
 	public void testCalculateFareBike(int arg) {
 		// ARRANGE
 		Date inTime = new Date();
-		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000));
+		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000L));
 		Date outTime = new Date();
 		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE, false);
 		ticket.setInTime(inTime);

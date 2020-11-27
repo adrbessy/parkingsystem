@@ -12,7 +12,6 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,8 +43,9 @@ public class ParkingServiceTest {
 	@Mock
 	TicketDAO ticketDAO;
 
-	@Mock
-	Logger logger;
+	/*
+	 * @Mock Logger logger;
+	 */
 
 	@BeforeEach
 	private void setUp() {
