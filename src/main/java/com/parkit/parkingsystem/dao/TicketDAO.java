@@ -89,7 +89,7 @@ public class TicketDAO {
 		return false;
 	}
 
-	public void getAllVehicleRegNumber(Ticket ticket) {
+	public boolean getAllVehicleRegNumber(Ticket ticket) {
 		Connection con = null;
 		ArrayList<String> VEHICLE_REG_NUMBER_List = new ArrayList<String>();
 		try {
@@ -100,10 +100,12 @@ public class TicketDAO {
 				VEHICLE_REG_NUMBER_List.add(rs.getString(1));
 			}
 			ticket.setVehicleRegNumberList(VEHICLE_REG_NUMBER_List);
+			return true;
 		} catch (Exception ex) {
 			logger.error("Error fetching recurrent user", ex);
 		} finally {
 			dataBaseConfig.closeConnection(con);
 		}
+		return false;
 	}
 }

@@ -80,7 +80,7 @@ public class ParkingService {
 		}
 	}
 
-	private String getVehicleRegNumber() throws Exception {
+	public String getVehicleRegNumber() {
 		System.out.println("Please type the vehicle registration number and press enter key");
 		return inputReaderUtil.readVehicleRegistrationNumber();
 	}
@@ -117,7 +117,7 @@ public class ParkingService {
 			return ParkingType.BIKE;
 		}
 		default: {
-			System.out.println("Incorrect input provided");
+			// System.out.println("Incorrect input provided");
 			throw new IllegalArgumentException("Entered input is invalid");
 		}
 		}
