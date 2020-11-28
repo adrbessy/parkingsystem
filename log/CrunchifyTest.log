@@ -4915,3 +4915,99 @@ java.lang.NullPointerException: null
 2020-11-28 12:36:10 [main] INFO  DataBaseTestConfig:46 - Closing Result Set
 2020-11-28 12:36:10 [main] INFO  DataBaseTestConfig:35 - Closing Prepared Statement
 2020-11-28 12:36:10 [main] INFO  DataBaseTestConfig:24 - Closing DB connection
+2020-11-28 19:17:22 [main] INFO  App:10 - Initializing Parking System
+2020-11-28 19:17:22 [main] INFO  InteractiveShell:15 - App initialized!!!
+2020-11-28 19:17:33 [main] ERROR DataBaseConfig:28 - Error while loading data.properties
+java.io.FileNotFoundException: data.properties (Aucun fichier ou dossier de ce type)
+	at java.io.FileInputStream.open0(Native Method) ~[?:?]
+	at java.io.FileInputStream.open(FileInputStream.java:219) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:112) ~[?:?]
+	at com.parkit.parkingsystem.config.DataBaseConfig.getConnection(DataBaseConfig.java:24) [classes/:?]
+	at com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSlot(ParkingSpotDAO.java:23) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:90) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:37) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:29) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-28 19:17:33 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:17:33 [main] ERROR ParkingSpotDAO:33 - Error fetching next available slot
+java.sql.SQLNonTransientConnectionException: Cannot load connection class because of underlying exception: com.mysql.cj.exceptions.WrongArgumentException: Failed to parse the host:port pair 'localhost:null'.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:79) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:131) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
+	at com.parkit.parkingsystem.config.DataBaseConfig.getConnection(DataBaseConfig.java:37) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ParkingSpotDAO.getNextAvailableSlot(ParkingSpotDAO.java:23) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:90) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:37) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:29) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Cannot load connection class because of underlying exception: com.mysql.cj.exceptions.WrongArgumentException: Failed to parse the host:port pair 'localhost:null'.
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	... 9 more
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Failed to parse the host:port pair 'localhost:null'.
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.parseHostPortPair(ConnectionUrlParser.java:502) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.buildHostInfoResortingToGenericSyntaxParser(ConnectionUrlParser.java:440) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.parseAuthoritySegment(ConnectionUrlParser.java:269) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.parseAuthoritySection(ConnectionUrlParser.java:183) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.getHosts(ConnectionUrlParser.java:632) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrl.getConnectionUrlInstance(ConnectionUrl.java:198) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:196) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	... 8 more
+Caused by: java.lang.NumberFormatException: For input string: "null"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:652) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:770) ~[?:?]
+	at com.mysql.cj.conf.ConnectionUrlParser.parseHostPortPair(ConnectionUrlParser.java:500) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.buildHostInfoResortingToGenericSyntaxParser(ConnectionUrlParser.java:440) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.parseAuthoritySegment(ConnectionUrlParser.java:269) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.parseAuthoritySection(ConnectionUrlParser.java:183) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrlParser.getHosts(ConnectionUrlParser.java:632) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.conf.ConnectionUrl.getConnectionUrlInstance(ConnectionUrl.java:198) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:196) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	... 8 more
+2020-11-28 19:17:33 [main] ERROR ParkingService:99 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:94) [classes/:?]
+	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:37) [classes/:?]
+	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:29) [classes/:?]
+	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
+2020-11-28 19:18:43 [main] INFO  App:10 - Initializing Parking System
+2020-11-28 19:18:43 [main] INFO  InteractiveShell:15 - App initialized!!!
+2020-11-28 19:18:57 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:18:58 [main] INFO  DataBaseConfig:67 - Closing Result Set
+2020-11-28 19:18:58 [main] INFO  DataBaseConfig:56 - Closing Prepared Statement
+2020-11-28 19:18:58 [main] INFO  DataBaseConfig:45 - Closing DB connection
+2020-11-28 19:19:09 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:19:09 [main] INFO  DataBaseConfig:56 - Closing Prepared Statement
+2020-11-28 19:19:09 [main] INFO  DataBaseConfig:45 - Closing DB connection
+2020-11-28 19:19:09 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:19:10 [main] INFO  DataBaseConfig:45 - Closing DB connection
+2020-11-28 19:19:10 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:19:10 [main] INFO  DataBaseConfig:45 - Closing DB connection
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:67 - Closing Result Set
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:56 - Closing Prepared Statement
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:45 - Closing DB connection
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:45 - Closing DB connection
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:35 - Create DB connection
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:56 - Closing Prepared Statement
+2020-11-28 19:19:33 [main] INFO  DataBaseConfig:45 - Closing DB connection

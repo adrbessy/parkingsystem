@@ -12,7 +12,6 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,42 +42,11 @@ public class ParkingServiceTest {
 	@Mock
 	TicketDAO ticketDAO;
 
-	/*
-	 * @Mock Logger logger;
-	 */
-
 	@BeforeEach
 	private void setUp() {
 		parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
 		ticket = new Ticket();
 	}
-
-	@AfterEach
-	public void undefTicket() {
-		ticket = null;
-	}
-
-	/*
-	 * @Test public void processIncomingVehicleTest() { // GIVEN
-	 * when(inputReaderUtil.readSelection()).thenReturn(1);
-	 * when(parkingSpotDAO.getNextAvailableSlot(any())).thenReturn(3);
-	 * when(parkingService.getVehicleRegNumber()).thenReturn("ABCDEF");
-	 * when(parkingSpotDAO.updateParking(any(ParkingSpot.class))).thenReturn(true);
-	 * when(ticketDAO.saveTicket(any(Ticket.class))).thenReturn(true);
-	 * when(ticketDAO.getAllVehicleRegNumber(any(Ticket.class))).thenReturn(true);
-	 * when(parkingService.checkRecurringUser(any(Ticket.class))).thenReturn(true);
-	 * 
-	 * // THEN parkingService.processIncomingVehicle(); }
-	 */
-
-	/*
-	 * @Test public void getNextParkingNumberIfAvailableTest() { // GIVEN
-	 * when(inputReaderUtil.readSelection()).thenReturn(1);
-	 * when(parkingSpotDAO.getNextAvailableSlot(any())).thenReturn(3);
-	 * 
-	 * // THEN parkingService.getNextParkingNumberIfAvailable(); // don't know how
-	 * to assert a new instance. }
-	 */
 
 	@Test
 	public void processExitingVehicleTest() {
@@ -114,13 +82,6 @@ public class ParkingServiceTest {
 		parkingService.processExitingVehicle();
 		verify(parkingSpotDAO, Mockito.times(0)).updateParking(any(ParkingSpot.class));
 	}
-
-	/*
-	 * @Test public void processExitingVehicleFailTest() { try {
-	 * parkingService.processExitingVehicle(); } catch (Exception ex) { //
-	 * assertThat(ex.getMessage()).isEqualTo("Unable to process exiting vehicle");
-	 * verify(logger).warn("Unable to process exiting vehicle"); } }
-	 */
 
 	@Test
 	public void testCheckRecurringUser() {
@@ -195,49 +156,5 @@ public class ParkingServiceTest {
 		assertThat(parkingService.getVehicleRegNumber()).isEqualTo("ABCDEF");
 		verify(inputReaderUtil).readVehicleRegistrationNumber();
 	}
-
-	/*
-	 * @Test public void testGetNextParkingNumberIfAvailable() { // GIVEN
-	 * when(parkingService.getVehicleType()).thenReturn(ParkingType.CAR);
-	 * when(parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR)).thenReturn(3);
-	 * 
-	 * // THEN assertThat(parkingService.getNextParkingNumberIfAvailable())
-	 * .isEqualTo(new ParkingSpot(3, ParkingType.CAR, true));
-	 * verify(parkingService).getVehicleType();
-	 * verify(parkingSpotDAO).getNextAvailableSlot(ParkingType.CAR); }
-	 */
-
-	/*
-	 * @Test public void testProcessExitingVehicle() { Date inTime = new Date();
-	 * inTime.setTime(System.currentTimeMillis() - (60 * 60 * 1000));
-	 * ticket.setInTime(inTime); ParkingSpot parkingSpot = new ParkingSpot(1,
-	 * ParkingType.CAR, false); ticket.setParkingSpot(parkingSpot);
-	 * 
-	 * // GIVEN when(parkingService.getVehicleRegNumber()).thenReturn("ABCDEF");
-	 * when(ticketDAO.getTicket("ABCDEF")).thenReturn(ticket);
-	 * when(ticketDAO.updateTicket(ticket)).thenReturn(true);
-	 * 
-	 * // THEN assertThat(parkingService.getVehicleRegNumber()).isEqualTo("ABCDEF");
-	 * verify(inputReaderUtil).readVehicleRegistrationNumber(); }
-	 */
-
-	// @Mock
-	// parkingSpotDAO parkingSpotDAO;
-
-	// @InjectMocks
-	// EmailService emailService;
-
-	/*
-	 * @Captor ArgumentCaptor<ParkingSpot> parkingSpotCaptor;
-	 * 
-	 * @Test public void testProcessExitingVehicle() { int number = 1; ParkingType
-	 * parkingType = ParkingType.CAR; boolean isAvailable = true; ParkingSpot
-	 * parkingSpot = new ParkingSpot(number, parkingType, isAvailable);
-	 * 
-	 * verify(parkingSpotDAO).updateParking(parkingSpotCaptor.capture());
-	 * ParkingSpot parkingSpotCaptorValue = parkingSpotCaptor.getValue();
-	 * 
-	 * }
-	 */
 
 }
