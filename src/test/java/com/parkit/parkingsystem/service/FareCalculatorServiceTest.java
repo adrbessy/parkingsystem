@@ -53,6 +53,25 @@ public class FareCalculatorServiceTest {
 	}
 
 	@ParameterizedTest(name = "Test for {0} minutes.")
+	@ValueSource(ints = { 0, 1, 5, 25, 29 })
+	public void calculateFareCarUnderLess30MinutesTest(int arg) {
+		// ARRANGE
+		Date inTime = new Date();
+		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000L));
+		Date outTime = new Date();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+		ticket.setInTime(inTime);
+		ticket.setOutTime(outTime);
+		ticket.setParkingSpot(parkingSpot);
+
+		// ACT
+		fareCalculatorService.calculateFare(ticket);
+
+		// ASSERT
+		assertThat(ticket.getPrice()).isEqualTo(0);
+	}
+
+	@ParameterizedTest(name = "Test for {0} minutes.")
 	@ValueSource(ints = { 45, 60, 900, 1440, 1500, 2340, 3000 })
 	public void testCalculateFareBike(int arg) {
 		// ARRANGE
@@ -69,6 +88,25 @@ public class FareCalculatorServiceTest {
 
 		// ASSERT
 		assertThat(ticket.getPrice()).isEqualTo(((double) arg) / 60 * Fare.BIKE_RATE_PER_HOUR);
+	}
+
+	@ParameterizedTest(name = "Test for {0} minutes.")
+	@ValueSource(ints = { 0, 1, 5, 25, 29 })
+	public void calculateFareBikeUnderLess30MinutesTest(int arg) {
+		// ARRANGE
+		Date inTime = new Date();
+		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000L));
+		Date outTime = new Date();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE, false);
+		ticket.setInTime(inTime);
+		ticket.setOutTime(outTime);
+		ticket.setParkingSpot(parkingSpot);
+
+		// ACT
+		fareCalculatorService.calculateFare(ticket);
+
+		// ASSERT
+		assertThat(ticket.getPrice()).isEqualTo(0);
 	}
 
 	@Test

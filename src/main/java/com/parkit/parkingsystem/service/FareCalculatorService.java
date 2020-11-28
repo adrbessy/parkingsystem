@@ -32,25 +32,30 @@ public class FareCalculatorService {
 			duration = (outDay - inDay) * 24 + duration / 60;
 		}
 
-		switch (ticket.getParkingSpot().getParkingType()) {
-		case CAR: {
-			if (ticket.getRecurringUser()) {
-				ticket.setPrice(
-						(duration * Fare.CAR_RATE_PER_HOUR) - 5 * (duration * Fare.CAR_RATE_PER_HOUR) / 100);
-			} else {
-				ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR);
+		if (duration < 0.5) {
+			ticket.setPrice(0);
+		} else {
+			switch (ticket.getParkingSpot().getParkingType()) {
+			case CAR: {
+
+				if (ticket.getRecurringUser()) {
+					ticket.setPrice(
+							(duration * Fare.CAR_RATE_PER_HOUR) - 5 * (duration * Fare.CAR_RATE_PER_HOUR) / 100);
+				} else {
+					ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR);
+				}
+				break;
 			}
-			break;
-		}
-		case BIKE: {
-			if (ticket.getRecurringUser()) {
-				ticket.setPrice(
-						(duration * Fare.BIKE_RATE_PER_HOUR) - 5 * (duration * Fare.BIKE_RATE_PER_HOUR) / 100);
-			} else {
-				ticket.setPrice(duration * Fare.BIKE_RATE_PER_HOUR);
+			case BIKE: {
+				if (ticket.getRecurringUser()) {
+					ticket.setPrice(
+							(duration * Fare.BIKE_RATE_PER_HOUR) - 5 * (duration * Fare.BIKE_RATE_PER_HOUR) / 100);
+				} else {
+					ticket.setPrice(duration * Fare.BIKE_RATE_PER_HOUR);
+				}
+				break;
 			}
-			break;
-		}
+			}
 		}
 	}
 }
