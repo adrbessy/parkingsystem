@@ -54,7 +54,7 @@ public class FareCalculatorServiceTest {
 
 	@ParameterizedTest(name = "Test for {0} minutes.")
 	@ValueSource(ints = { 0, 1, 5, 25, 29 })
-	public void calculateFareCarUnderLess30Minutes(int arg) {
+	public void calculateFareCarUnderLess30MinutesTest(int arg) {
 		// ARRANGE
 		Date inTime = new Date();
 		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000L));
@@ -92,7 +92,7 @@ public class FareCalculatorServiceTest {
 
 	@ParameterizedTest(name = "Test for {0} minutes.")
 	@ValueSource(ints = { 0, 1, 5, 25, 29 })
-	public void calculateFareBikeUnderLess30Minutes(int arg) {
+	public void calculateFareBikeUnderLess30MinutesTest(int arg) {
 		// ARRANGE
 		Date inTime = new Date();
 		inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000L));
