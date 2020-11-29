@@ -13,4 +13,6 @@ public class DBConstants {
 
 	public static final String DELETE_ROWS = "delete from ticket order by ID desc limit 2";
 
+	public static final String COUNT_OCCURRENCES_OF_ONE_VEHICLE_REG_NUMBER = "select count(VEHICLE_REG_NUMBER) from ticket where VEHICLE_REG_NUMBER = ?";
+
 }

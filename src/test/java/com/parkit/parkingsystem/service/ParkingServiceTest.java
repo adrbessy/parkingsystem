@@ -1,15 +1,12 @@
 package com.parkit.parkingsystem.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -83,40 +80,25 @@ public class ParkingServiceTest {
 		verify(parkingSpotDAO, Mockito.times(0)).updateParking(any(ParkingSpot.class));
 	}
 
-	@Test
-	public void testCheckRecurringUser() {
-		// ARRANGE
-		ticket.setRecurringUser(false);
-		ArrayList<String> str = new ArrayList<String>();
-		str.add("ABCDE");
-		str.add("ABCDE");
-		ticket.setVehicleRegNumberList(str);
-		ticket.setVehicleRegNumber("ABCDE");
-
-		// ACT
-		boolean recurringUser = parkingService.checkRecurringUser(ticket);
-
-		// ASSERT
-		assertTrue(recurringUser);
-	}
-
-	@Test
-	public void testCheckNoRecurringUser() {
-		// ARRANGE
-		ticket.setRecurringUser(false);
-		ArrayList<String> str = new ArrayList<String>();
-		str.add("ABCDE");
-		str.add("ABCFF");
-		ticket.setVehicleRegNumberList(str);
-		ticket.setVehicleRegNumber("ABCFF");
-
-		// ACT
-		boolean recurringUser = parkingService.checkRecurringUser(ticket);
-
-		// ASSERT
-		assertFalse(recurringUser);
-	}
-
+	/*
+	 * @Test public void testCheckRecurringUser() { // ARRANGE
+	 * ticket.setRecurringUser(false); ArrayList<String> str = new
+	 * ArrayList<String>(); str.add("ABCDE"); str.add("ABCDE");
+	 * ticket.setVehicleRegNumberList(str); ticket.setVehicleRegNumber("ABCDE");
+	 * 
+	 * // ACT boolean recurringUser = parkingService.checkRecurringUser(ticket);
+	 * 
+	 * // ASSERT assertTrue(recurringUser); }
+	 * 
+	 * @Test public void testCheckNoRecurringUser() { // ARRANGE
+	 * ticket.setRecurringUser(false); ArrayList<String> str = new
+	 * ArrayList<String>(); str.add("ABCDE"); str.add("ABCFF");
+	 * ticket.setVehicleRegNumberList(str); ticket.setVehicleRegNumber("ABCFF");
+	 * 
+	 * // ACT boolean recurringUser = parkingService.checkRecurringUser(ticket);
+	 * 
+	 * // ASSERT assertFalse(recurringUser); }
+	 */
 	@Test
 	public void testGetVehicleType1() {
 		// GIVEN

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -108,19 +107,22 @@ public class TicketDAO {
 		return false;
 	}
 
-	public boolean getAllVehicleRegNumber(Ticket ticket) {
+	public boolean checkRecurringUser(String vehicleRegNumber) {
 		Connection con = null;
 		PreparedStatement ps = null;
-		ArrayList<String> VEHICLE_REG_NUMBER_List = new ArrayList<String>();
 		try {
 			con = dataBaseConfig.getConnection();
-			ps = con.prepareStatement(DBConstants.GET_VEHICLE_REG_NUMBER);
+			ps = con.prepareStatement(DBConstants.COUNT_OCCURRENCES_OF_ONE_VEHICLE_REG_NUMBER);
+			ps.setString(1, vehicleRegNumber);
 			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				VEHICLE_REG_NUMBER_List.add(rs.getString(1));
+			if (rs.next()) {
+				int nb = rs.getInt(1);
+				if (nb > 0) {
+					return true;
+				} else {
+					return false;
+				}
 			}
-			ticket.setVehicleRegNumberList(VEHICLE_REG_NUMBER_List);
-			return true;
 		} catch (Exception ex) {
 			logger.error("Error fetching recurrent user", ex);
 		} finally {
