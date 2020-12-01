@@ -1,32 +1,32 @@
 package com.parkit.parkingsystem.service;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.mockito.Mock;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.parkit.parkingsystem.util.InputReaderUtil;
-
+@ExtendWith(MockitoExtension.class)
 class InteractiveShellTest {
 
 	// private static InteractiveShell interactiveShell;
-
-	@Mock
-	InputReaderUtil inputReaderUtil;
-
-	@BeforeAll
-	private static void setUp() {
-		// interactiveShell = new InteractiveShell();
-	}
-
 	/*
-	 * @Test void testLoadInterface() { ParkingService parkingService =
-	 * mock(ParkingService.class);
+	 * @Mock InputReaderUtil inputReaderUtil;
+	 * 
+	 * @Mock ParkingService parkingService;
+	 * 
+	 * @Test void testLoadInterface() { // InteractiveShell interactiveShell = new
+	 * InteractiveShell();
+	 * 
+	 * // ParkingService parkingService = mock(ParkingService.class);
 	 * 
 	 * // GIVEN when(inputReaderUtil.readSelection()).thenReturn(1);
 	 * 
-	 * // ACT // InteractiveShell interactiveShell = new InteractiveShell();
-	 * InteractiveShell.loadInterface();
+	 * // ACT InteractiveShell.loadInterface();
 	 * 
-	 * verify(parkingService, times(1)).processIncomingVehicle(); }
+	 * verify(parkingService).processIncomingVehicle(); }
 	 */
-
+	/*
+	 * @Test public void loadMenuUsage() { PrintStream out =
+	 * mock(PrintStream.class); System.setOut(out);
+	 * InteractiveShell.loadInterface(); verify(out).println(startsWith("Please"));
+	 * }
+	 */
 }

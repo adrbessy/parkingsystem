@@ -46,6 +46,51 @@ public class ParkingServiceTest {
 	}
 
 	@Test
+	public void processIncomingVehicleTest() {
+		// GIVEN
+		when(inputReaderUtil.readSelection()).thenReturn(1);
+		when(parkingSpotDAO.getNextAvailableSlot(any(ParkingType.class))).thenReturn(1);
+		when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
+		when(parkingSpotDAO.updateParking(any(ParkingSpot.class))).thenReturn(true);
+		when(ticketDAO.checkRecurringUser("ABCDEF")).thenReturn(true);
+		when(ticketDAO.saveTicket(any(Ticket.class))).thenReturn(true);
+
+		// THEN
+		parkingService.processIncomingVehicle();
+		verify(ticketDAO, Mockito.times(1)).saveTicket(any(Ticket.class));
+	}
+
+	@Test
+	public void testGetVehicleType1() {
+		// GIVEN
+		when(inputReaderUtil.readSelection()).thenReturn(1);
+
+		// THEN
+		assertThat(parkingService.getVehicleType()).isEqualTo(ParkingType.CAR);
+		verify(inputReaderUtil).readSelection();
+	}
+
+	@Test
+	public void testGetVehicleType2() {
+		// GIVEN
+		when(inputReaderUtil.readSelection()).thenReturn(2);
+
+		// THEN
+		assertThat(parkingService.getVehicleType()).isEqualTo(ParkingType.BIKE);
+		verify(inputReaderUtil).readSelection();
+	}
+
+	@Test
+	public void testGetVehicleTypeDefault() {
+		// GIVEN
+		when(inputReaderUtil.readSelection()).thenReturn(3);
+
+		// THEN
+		assertThrows(IllegalArgumentException.class, () -> parkingService.getVehicleType());
+		verify(inputReaderUtil).readSelection();
+	}
+
+	@Test
 	public void processExitingVehicleTest() {
 		// GIVEN
 		when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
@@ -78,55 +123,6 @@ public class ParkingServiceTest {
 		// THEN
 		parkingService.processExitingVehicle();
 		verify(parkingSpotDAO, Mockito.times(0)).updateParking(any(ParkingSpot.class));
-	}
-
-	/*
-	 * @Test public void testCheckRecurringUser() { // ARRANGE
-	 * ticket.setRecurringUser(false); ArrayList<String> str = new
-	 * ArrayList<String>(); str.add("ABCDE"); str.add("ABCDE");
-	 * ticket.setVehicleRegNumberList(str); ticket.setVehicleRegNumber("ABCDE");
-	 * 
-	 * // ACT boolean recurringUser = parkingService.checkRecurringUser(ticket);
-	 * 
-	 * // ASSERT assertTrue(recurringUser); }
-	 * 
-	 * @Test public void testCheckNoRecurringUser() { // ARRANGE
-	 * ticket.setRecurringUser(false); ArrayList<String> str = new
-	 * ArrayList<String>(); str.add("ABCDE"); str.add("ABCFF");
-	 * ticket.setVehicleRegNumberList(str); ticket.setVehicleRegNumber("ABCFF");
-	 * 
-	 * // ACT boolean recurringUser = parkingService.checkRecurringUser(ticket);
-	 * 
-	 * // ASSERT assertFalse(recurringUser); }
-	 */
-	@Test
-	public void testGetVehicleType1() {
-		// GIVEN
-		when(inputReaderUtil.readSelection()).thenReturn(1);
-
-		// THEN
-		assertThat(parkingService.getVehicleType()).isEqualTo(ParkingType.CAR);
-		verify(inputReaderUtil).readSelection();
-	}
-
-	@Test
-	public void testGetVehicleType2() {
-		// GIVEN
-		when(inputReaderUtil.readSelection()).thenReturn(2);
-
-		// THEN
-		assertThat(parkingService.getVehicleType()).isEqualTo(ParkingType.BIKE);
-		verify(inputReaderUtil).readSelection();
-	}
-
-	@Test
-	public void testGetVehicleTypeDefault() {
-		// GIVEN
-		when(inputReaderUtil.readSelection()).thenReturn(3);
-
-		// THEN
-		assertThrows(IllegalArgumentException.class, () -> parkingService.getVehicleType());
-		verify(inputReaderUtil).readSelection();
 	}
 
 	@Test
