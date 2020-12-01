@@ -126,13 +126,27 @@ public class ParkingServiceTest {
 	}
 
 	@Test
-	public void testGetVehicleRegNumber() {
+	public void GetVehicleRegNumberTest() {
 		// GIVEN
 		when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
 
 		// THEN
 		assertThat(parkingService.getVehicleRegNumber()).isEqualTo("ABCDEF");
 		verify(inputReaderUtil).readVehicleRegistrationNumber();
+	}
+
+	@Test
+	public void getNextParkingNumberIfNotAvailableTest() {
+		// GIVEN
+		when(inputReaderUtil.readSelection()).thenReturn(1);
+		when(parkingSpotDAO.getNextAvailableSlot(any(ParkingType.class))).thenReturn(-1);
+
+		// THEN
+		try {
+			parkingService.getNextParkingNumberIfAvailable();
+		} catch (Exception e) {
+			assert (e.getMessage().contains("Error fetching parking number from DB. Parking slots might be full"));
+		}
 	}
 
 }
