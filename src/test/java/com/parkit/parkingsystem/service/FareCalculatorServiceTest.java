@@ -46,10 +46,10 @@ public class FareCalculatorServiceTest {
 		ticket.setParkingSpot(parkingSpot);
 
 		// ACT
-		fareCalculatorService.calculateFare(ticket);
+		double price = fareCalculatorService.calculateFare(ticket);
 
 		// ASSERT
-		assertThat(ticket.getPrice()).isEqualTo(((double) arg) / 60 * Fare.CAR_RATE_PER_HOUR);
+		assertThat(price).isEqualTo(((double) arg) / 60 * Fare.CAR_RATE_PER_HOUR);
 	}
 
 	@ParameterizedTest(name = "Test for {0} minutes.")
@@ -65,10 +65,10 @@ public class FareCalculatorServiceTest {
 		ticket.setParkingSpot(parkingSpot);
 
 		// ACT
-		fareCalculatorService.calculateFare(ticket);
+		double price = fareCalculatorService.calculateFare(ticket);
 
 		// ASSERT
-		assertThat(ticket.getPrice()).isEqualTo(0);
+		assertThat(price).isEqualTo(0);
 	}
 
 	@ParameterizedTest(name = "Test for {0} minutes.")
@@ -84,10 +84,10 @@ public class FareCalculatorServiceTest {
 		ticket.setParkingSpot(parkingSpot);
 
 		// ACT
-		fareCalculatorService.calculateFare(ticket);
+		double price = fareCalculatorService.calculateFare(ticket);
 
 		// ASSERT
-		assertThat(ticket.getPrice()).isEqualTo(((double) arg) / 60 * Fare.BIKE_RATE_PER_HOUR);
+		assertThat(price).isEqualTo(((double) arg) / 60 * Fare.BIKE_RATE_PER_HOUR);
 	}
 
 	@ParameterizedTest(name = "Test for {0} minutes.")
@@ -103,10 +103,10 @@ public class FareCalculatorServiceTest {
 		ticket.setParkingSpot(parkingSpot);
 
 		// ACT
-		fareCalculatorService.calculateFare(ticket);
+		double price = fareCalculatorService.calculateFare(ticket);
 
 		// ASSERT
-		assertThat(ticket.getPrice()).isEqualTo(0);
+		assertThat(price).isEqualTo(0);
 	}
 
 	@Test
@@ -153,11 +153,10 @@ public class FareCalculatorServiceTest {
 		ticket.setRecurringUser(true);
 
 		// ACT
-		fareCalculatorService.calculateFare(ticket);
+		double price = fareCalculatorService.calculateFare(ticket);
 
 		// ASSERT
-		assertThat(
-				ticket.getPrice()).isEqualTo(((1 * Fare.CAR_RATE_PER_HOUR) - 5 * (1 * Fare.CAR_RATE_PER_HOUR) / 100));
+		assertThat(price).isEqualTo(((1 * Fare.CAR_RATE_PER_HOUR) - 5 * (1 * Fare.CAR_RATE_PER_HOUR) / 100));
 		// 5% discount
 	}
 
@@ -175,11 +174,10 @@ public class FareCalculatorServiceTest {
 		ticket.setRecurringUser(true);
 
 		// ACT
-		fareCalculatorService.calculateFare(ticket);
+		double price = fareCalculatorService.calculateFare(ticket);
 
 		// ASSERT
-		assertThat(
-				ticket.getPrice()).isEqualTo(((1 * Fare.BIKE_RATE_PER_HOUR) - 5 * (1 * Fare.BIKE_RATE_PER_HOUR) / 100));
+		assertThat(price).isEqualTo(((1 * Fare.BIKE_RATE_PER_HOUR) - 5 * (1 * Fare.BIKE_RATE_PER_HOUR) / 100));
 		// 5% discount
 	}
 

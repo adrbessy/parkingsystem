@@ -7,7 +7,7 @@ import com.parkit.parkingsystem.model.Ticket;
 
 public class FareCalculatorService {
 
-	public void calculateFare(Ticket ticket) {
+	public double calculateFare(Ticket ticket) {
 		if ((ticket.getOutTime() == null) || (ticket.getOutTime().before(ticket.getInTime()))) {
 			throw new IllegalArgumentException("Out time provided is incorrect:" + ticket.getOutTime().toString());
 		}
@@ -20,30 +20,27 @@ public class FareCalculatorService {
 		double diffInHours = diffInMillisec / (60 * 60 * 1000);
 
 		if (diffInHours < 0.5) {
-			ticket.setPrice(0);
+			return 0;
 		} else {
 			switch (ticket.getParkingSpot().getParkingType()) {
 			case CAR: {
 
 				if (ticket.getRecurringUser()) {
-					ticket.setPrice(
-							(diffInHours * Fare.CAR_RATE_PER_HOUR) - 5 * (diffInHours * Fare.CAR_RATE_PER_HOUR) / 100);
+					return ((diffInHours * Fare.CAR_RATE_PER_HOUR) - 5 * (diffInHours * Fare.CAR_RATE_PER_HOUR) / 100);
 				} else {
-					ticket.setPrice(diffInHours * Fare.CAR_RATE_PER_HOUR);
+					return (diffInHours * Fare.CAR_RATE_PER_HOUR);
 				}
-				break;
 			}
 			case BIKE: {
 				if (ticket.getRecurringUser()) {
-					ticket.setPrice(
-							(diffInHours * Fare.BIKE_RATE_PER_HOUR)
-									- 5 * (diffInHours * Fare.BIKE_RATE_PER_HOUR) / 100);
+					return ((diffInHours * Fare.BIKE_RATE_PER_HOUR)
+							- 5 * (diffInHours * Fare.BIKE_RATE_PER_HOUR) / 100);
 				} else {
-					ticket.setPrice(diffInHours * Fare.BIKE_RATE_PER_HOUR);
+					return (diffInHours * Fare.BIKE_RATE_PER_HOUR);
 				}
-				break;
 			}
 			}
 		}
+		return 0;
 	}
 }

@@ -2,8 +2,12 @@ package com.parkit.parkingsystem.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Date;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.parkit.parkingsystem.constants.ParkingType;
 
 class TicketTest {
 
@@ -18,6 +22,45 @@ class TicketTest {
 	void getId_TEST() {
 		ticket.setId(1);
 		assertThat(ticket.getId()).isEqualTo(1);
+	}
+
+	@Test
+	void getParkingSpot_TEST() {
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+		ticket.setParkingSpot(parkingSpot);
+		assertThat(ticket.getParkingSpot()).isEqualTo(parkingSpot);
+	}
+
+	@Test
+	void getVehicleRegNumber_TEST() {
+		ticket.setVehicleRegNumber("ABCDEF");
+		assertThat(ticket.getVehicleRegNumber()).isEqualTo("ABCDEF");
+	}
+
+	@Test
+	void getPrice_TEST() {
+		ticket.setPrice(1.0);
+		assertThat(ticket.getPrice()).isEqualTo(1.0);
+	}
+
+	@Test
+	void getInTime_TEST() {
+		Date date = new Date();
+		ticket.setInTime(date);
+		assertThat(ticket.getInTime()).isEqualTo(date);
+	}
+
+	@Test
+	void getOutTime_TEST() {
+		Date date = new Date();
+		ticket.setOutTime(date);
+		assertThat(ticket.getOutTime()).isEqualTo(date);
+	}
+
+	@Test
+	void getRecurringUser_TEST() {
+		ticket.setRecurringUser(true);
+		assertThat(ticket.getRecurringUser()).isEqualTo(true);
 	}
 
 }
