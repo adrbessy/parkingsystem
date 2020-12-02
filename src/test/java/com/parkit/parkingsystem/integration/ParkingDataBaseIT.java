@@ -1,5 +1,6 @@
 package com.parkit.parkingsystem.integration;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -10,6 +11,7 @@ import java.util.Date;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -124,6 +126,45 @@ public class ParkingDataBaseIT {
 		boolean rep = ticketDAO.checkRecurringUser("ABCEEE");
 
 		assertFalse(rep);
+	}
+
+	@Test
+	@DisplayName("Verify that the next available spot for a CAR is spot 1 for empty DB")
+	public void getNextAvailableSpotCar_TEST() {
+		parkingSpotDAO.dataBaseConfig = new DataBaseTestConfig();
+		assertThat(parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR)).isEqualTo(1);
+	}
+
+	@Test
+	@DisplayName("Verify that the next available spot for BIKE is spot 4 for empty DB")
+	public void getNextAvailableSpotBike_TEST() {
+		parkingSpotDAO.dataBaseConfig = new DataBaseTestConfig();
+		assertThat(parkingSpotDAO.getNextAvailableSlot(ParkingType.BIKE)).isEqualTo(4);
+	}
+
+	@Test
+	@DisplayName("Verify that when updating parking, will get the next available CAR spot")
+	public void updateParkingSpotCar_TEST() {
+		// GIVEN
+		parkingSpotDAO.dataBaseConfig = new DataBaseTestConfig();
+		ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+
+		// THEN
+		assertThat(parkingSpotDAO.updateParking(parkingSpot)).isTrue();
+		assertThat(parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR)).isEqualTo(2);
+	}
+
+	@Test
+	@DisplayName("Verify that when updating parking, will get the next available BIKE spot")
+	public void updateParkingSpotBike_TEST() {
+		// GIVEN
+		parkingSpotDAO.dataBaseConfig = new DataBaseTestConfig();
+		ParkingSpot parkingSpot = new ParkingSpot(4, ParkingType.BIKE, false);
+
+		// THEN
+		assertThat(parkingSpotDAO.updateParking(parkingSpot)).isTrue();
+		assertThat(parkingSpotDAO.getNextAvailableSlot(ParkingType.BIKE)).isEqualTo(5);
+
 	}
 
 }

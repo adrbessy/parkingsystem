@@ -1,7 +1,6 @@
 
 package com.parkit.parkingsystem.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Ticket {
@@ -12,7 +11,6 @@ public class Ticket {
 	private Date inTime;
 	private Date outTime;
 	private boolean recurringUser;
-	ArrayList<String> VehicleRegNumberList;
 
 	public int getId() {
 		return id;
@@ -68,14 +66,6 @@ public class Ticket {
 
 	public boolean getRecurringUser() {
 		return recurringUser;
-	}
-
-	public void setVehicleRegNumberList(ArrayList<String> v) {
-		this.VehicleRegNumberList = v;
-	}
-
-	public ArrayList<String> getVehicleRegNumberList() {
-		return VehicleRegNumberList;
 	}
 
 }
