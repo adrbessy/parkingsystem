@@ -1,22 +1,46 @@
 package com.parkit.parkingsystem.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
-
+@ExtendWith(MockitoExtension.class)
 class TicketDAOTest {
 
+	TicketDAO ticketDAO;
+
 	@Mock
-	DataBaseTestConfig dataBaseTestConfig;
+	Connection con;
+
+	@Mock
+	PreparedStatement ps;
+
+	@BeforeEach
+	private void setUp() {
+		ticketDAO = new TicketDAO();
+	}
 	/*
-	 * @Test void checkRecurringUserTest() { try {
-	 * doReturn("ABCDEF").when(dataBaseTestConfig.getConnection()
-	 * .prepareStatement(DBConstants.COUNT_OCCURRENCES_OF_ONE_VEHICLE_REG_NUMBER)).
-	 * executeQuery(); } catch (ClassNotFoundException | SQLException e) { // TODO
-	 * Auto-generated catch block e.printStackTrace(); }
+	 * @Test void checkRecurringUserTest() throws Exception { Date inTime = new
+	 * Date(); inTime.setTime(System.currentTimeMillis() - (60 * 60 * 1000L)); Date
+	 * outTime = new Date(); //
+	 * when(con.prepareStatement(anyString())).thenReturn(ps);
+	 * doNothing().when(ps).setInt(1, 1); doNothing().when(ps).setString(2,
+	 * "ABCDEF"); doNothing().when(ps).setDouble(3, 2.0);
+	 * doNothing().when(ps).setTimestamp(4, new Timestamp(inTime.getTime()));
+	 * doNothing().when(ps).setTimestamp(5, (outTime == null) ? null : (new
+	 * Timestamp(outTime.getTime())));
 	 * 
-	 * boolean rep = ticketDAO.checkRecurringUser("ABCDEF");
+	 * ticketDAO.setData(1, "ABCDEF", 2.0, inTime, outTime);
 	 * 
-	 * assertTrue(rep); }
+	 * verify(ps).setInt(1, 1); verify(ps).setString(2, "ABCDEF");
+	 * verify(ps).setDouble(3, 2.0); verify(ps).setTimestamp(4, new
+	 * Timestamp(inTime.getTime())); verify(ps).setTimestamp(5, (outTime == null) ?
+	 * null : (new Timestamp(outTime.getTime())));
+	 * 
+	 * }
 	 */
 }

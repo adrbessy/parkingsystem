@@ -10,5 +10,13 @@ class ParkingSpotDAOTest {
 	private void setUp() {
 		parkingSpotDAO = new ParkingSpotDAO();
 	}
+	/*
+	 * @Test public void getNextAvailableSlot_TEST() { // GIVEN
+	 * 
+	 * // THEN int slot = parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR);
+	 * 
+	 * 
+	 * }
+	 */
 
 }
