@@ -20,9 +20,9 @@ public class TicketDAO {
 	private static final Logger logger = LogManager.getLogger("TicketDAO");
 
 	public DataBaseConfig dataBaseConfig = new DataBaseConfig();
+	public Connection con = null;
 
 	public boolean saveTicket(Ticket ticket) {
-		Connection con = null;
 		PreparedStatement ps = null;
 		try {
 			con = dataBaseConfig.getConnection();
@@ -52,7 +52,6 @@ public class TicketDAO {
 	}
 
 	public Ticket getTicket(String vehicleRegNumber) {
-		Connection con = null;
 		Ticket ticket = null;
 		try {
 			con = dataBaseConfig.getConnection();
@@ -81,7 +80,6 @@ public class TicketDAO {
 	}
 
 	public boolean updateTicket(Ticket ticket) {
-		Connection con = null;
 		PreparedStatement ps = null;
 		try {
 			con = dataBaseConfig.getConnection();
@@ -108,7 +106,6 @@ public class TicketDAO {
 	}
 
 	public boolean checkRecurringUser(String vehicleRegNumber) {
-		Connection con = null;
 		PreparedStatement ps = null;
 		try {
 			con = dataBaseConfig.getConnection();

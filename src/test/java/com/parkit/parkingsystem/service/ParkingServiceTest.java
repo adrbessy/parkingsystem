@@ -126,7 +126,7 @@ public class ParkingServiceTest {
 	}
 
 	@Test
-	public void GetVehicleRegNumberTest() {
+	public void getVehicleRegNumberTest() {
 		// GIVEN
 		when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
 
