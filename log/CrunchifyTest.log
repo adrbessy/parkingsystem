@@ -135,10 +135,10 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 2020-11-19 12:13:01 [main] INFO  DataBaseConfig:34 - Closing Prepared Statement
 2020-11-19 12:13:01 [main] INFO  DataBaseConfig:23 - Closing DB connection
 2020-11-19 12:13:01 [main] INFO  DataBaseConfig:13 - Create DB connection
-2020-11-19 12:14:02 [main] ERROR TicketDAO:37 - Error fetching next available slot
+2020-11-19 12:14:02 [main] ERROR ticketDao:37 - Error fetching next available slot
 java.lang.NullPointerException: null
 	at com.parkit.parkingsystem.model.Ticket.getInTime(Ticket.java:49) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:33) [classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:33) [classes/:?]
 	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:47) [classes/:?]
 	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:28) [classes/:?]
 	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
@@ -153,10 +153,10 @@ java.lang.NullPointerException: null
 2020-11-19 12:29:08 [main] INFO  DataBaseConfig:34 - Closing Prepared Statement
 2020-11-19 12:29:08 [main] INFO  DataBaseConfig:23 - Closing DB connection
 2020-11-19 12:29:08 [main] INFO  DataBaseConfig:13 - Create DB connection
-2020-11-19 12:29:08 [main] ERROR TicketDAO:37 - Error fetching next available slot
+2020-11-19 12:29:08 [main] ERROR ticketDao:37 - Error fetching next available slot
 java.lang.NullPointerException: null
 	at com.parkit.parkingsystem.model.Ticket.getOutTime(Ticket.java:57) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:34) [classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:34) [classes/:?]
 	at com.parkit.parkingsystem.service.ParkingService.processIncomingVehicle(ParkingService.java:47) [classes/:?]
 	at com.parkit.parkingsystem.service.InteractiveShell.loadInterface(InteractiveShell.java:28) [classes/:?]
 	at com.parkit.parkingsystem.App.main(App.java:11) [classes/:?]
@@ -2726,7 +2726,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
 2020-11-24 19:49:09 [main] INFO  DataBaseTestConfig:14 - Create DB connection
-2020-11-24 19:49:09 [main] ERROR TicketDAO:67 - Error fetching next available slot
+2020-11-24 19:49:09 [main] ERROR ticketDao:67 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -2739,7 +2739,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:16) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.getTicket(TicketDAO.java:49) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.getTicket(ticketDao.java:49) ~[classes/:?]
 	at com.parkit.parkingsystem.service.ParkingService.processExitingVehicle(ParkingService.java:129) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.testParkingLotExit(ParkingDataBaseIT.java:61) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
@@ -4053,7 +4053,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464) [.cp/:?]
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-11-27 19:59:22 [main] INFO  DataBaseTestConfig:14 - Create DB connection
-2020-11-27 19:59:22 [main] ERROR TicketDAO:77 - Error fetching next available slot
+2020-11-27 19:59:22 [main] ERROR ticketDao:77 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -4066,7 +4066,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:16) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.getTicket(TicketDAO.java:59) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.getTicket(ticketDao.java:59) ~[classes/:?]
 	at com.parkit.parkingsystem.service.ParkingService.processExitingVehicle(ParkingService.java:126) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.testParkingLotExit(ParkingDataBaseIT.java:65) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
@@ -4613,7 +4613,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464) [.cp/:?]
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-11-27 20:00:59 [main] INFO  DataBaseTestConfig:14 - Create DB connection
-2020-11-27 20:00:59 [main] ERROR TicketDAO:77 - Error fetching next available slot
+2020-11-27 20:00:59 [main] ERROR ticketDao:77 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -4626,7 +4626,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:16) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.getTicket(TicketDAO.java:59) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.getTicket(ticketDao.java:59) ~[classes/:?]
 	at com.parkit.parkingsystem.service.ParkingService.processExitingVehicle(ParkingService.java:126) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.testParkingLotExit(ParkingDataBaseIT.java:65) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
@@ -5012,7 +5012,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 2020-11-28 19:19:33 [main] INFO  DataBaseConfig:56 - Closing Prepared Statement
 2020-11-28 19:19:33 [main] INFO  DataBaseConfig:45 - Closing DB connection
 2020-11-29 17:16:03 [main] INFO  DataBaseConfig:35 - Create DB connection
-2020-11-29 17:16:03 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-11-29 17:16:03 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -5025,8 +5025,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.config.DataBaseConfig.getConnection(DataBaseConfig.java:37) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:29) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:29) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5124,7 +5124,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-11-29 17:16:03 [main] INFO  DataBaseConfig:35 - Create DB connection
-2020-11-29 17:16:03 [main] ERROR TicketDAO:125 - Error fetching recurrent user
+2020-11-29 17:16:03 [main] ERROR ticketDao:125 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -5137,8 +5137,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.config.DataBaseConfig.getConnection(DataBaseConfig.java:37) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:31) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:31) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5237,7 +5237,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-11-29 17:24:41 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-29 17:24:41 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 17:24:41 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-11-29 17:24:41 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -5250,8 +5250,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:49) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:49) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5349,7 +5349,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-11-29 17:24:41 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 17:24:41 [main] ERROR TicketDAO:125 - Error fetching recurrent user
+2020-11-29 17:24:41 [main] ERROR ticketDao:125 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -5362,8 +5362,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:51) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:51) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5466,10 +5466,10 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 2020-11-29 17:34:55 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-29 17:34:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
 2020-11-29 17:34:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 17:34:58 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-11-29 17:34:58 [main] ERROR ticketDao:39 - Error fetching next available slot
 java.lang.NullPointerException: null
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:32) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:49) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:32) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:49) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5539,7 +5539,7 @@ java.lang.NullPointerException: null
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-11-29 17:34:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
 2020-11-29 17:34:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 17:34:58 [main] ERROR TicketDAO:125 - Error fetching recurrent user
+2020-11-29 17:34:58 [main] ERROR ticketDao:125 - Error fetching recurrent user
 java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
@@ -5548,8 +5548,8 @@ java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1283) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:786) ~[mysql-connector-java-8.0.17.jar:8.0.17]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:118) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:51) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:118) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:51) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5623,7 +5623,7 @@ java.sql.SQLException: Before start of result set
 2020-11-29 17:42:43 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-29 17:42:43 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
 2020-11-29 17:42:43 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 17:42:43 [main] ERROR TicketDAO:125 - Error fetching recurrent user
+2020-11-29 17:42:43 [main] ERROR ticketDao:125 - Error fetching recurrent user
 java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
@@ -5632,8 +5632,8 @@ java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1283) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:786) ~[mysql-connector-java-8.0.17.jar:8.0.17]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:118) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:55) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:118) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:55) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5707,7 +5707,7 @@ java.sql.SQLException: Before start of result set
 2020-11-29 21:10:47 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-29 21:10:54 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
 2020-11-29 21:11:12 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 21:13:23 [main] ERROR TicketDAO:125 - Error fetching recurrent user
+2020-11-29 21:13:23 [main] ERROR ticketDao:125 - Error fetching recurrent user
 java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
@@ -5716,8 +5716,8 @@ java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1283) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:786) ~[mysql-connector-java-8.0.17.jar:8.0.17]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:118) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:45) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:118) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:45) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5791,7 +5791,7 @@ java.sql.SQLException: Before start of result set
 2020-11-29 21:18:25 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-29 21:18:26 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
 2020-11-29 21:18:26 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 21:18:26 [main] ERROR TicketDAO:125 - Error fetching recurrent user
+2020-11-29 21:18:26 [main] ERROR ticketDao:125 - Error fetching recurrent user
 java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
@@ -5800,8 +5800,8 @@ java.sql.SQLException: Before start of result set
 	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1283) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:786) ~[mysql-connector-java-8.0.17.jar:8.0.17]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:118) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:45) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:118) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:45) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -5875,7 +5875,7 @@ java.sql.SQLException: Before start of result set
 2020-11-29 21:20:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-29 21:20:22 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
 2020-11-29 21:20:22 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-29 21:20:22 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-11-29 21:20:22 [main] ERROR ticketDao:127 - Error fetching recurrent user
 java.sql.SQLException: Column Index out of range, 0 < 1.
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
@@ -5884,8 +5884,8 @@ java.sql.SQLException: Column Index out of range, 0 < 1.
 	at com.mysql.cj.jdbc.result.ResultSetImpl.checkColumnBounds(ResultSetImpl.java:456) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1284) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:786) ~[mysql-connector-java-8.0.17.jar:8.0.17]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:119) ~[classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAOTest.checkRecurringUserTest(TicketDAOTest.java:45) ~[test-classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:119) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDaoTest.checkRecurringUserTest(ticketDaoTest.java:45) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -6161,7 +6161,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-11-30 13:10:02 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-30 13:10:02 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-30 13:10:02 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-11-30 13:10:02 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -6174,7 +6174,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:120) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -6273,7 +6273,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-11-30 13:10:02 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-30 13:10:02 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-11-30 13:10:02 [main] ERROR ticketDao:127 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -6286,7 +6286,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:122) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -6386,7 +6386,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-11-30 13:10:02 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-11-30 13:10:02 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-30 13:10:02 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-11-30 13:10:02 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -6399,7 +6399,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:102) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -6498,7 +6498,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-11-30 13:10:02 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-11-30 13:10:02 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-11-30 13:10:02 [main] ERROR ticketDao:127 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -6511,7 +6511,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:104) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -10449,7 +10449,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:05:49 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:05:49 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -10462,7 +10462,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:119) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -10561,7 +10561,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:05:49 [main] ERROR TicketDAO:124 - Error fetching recurrent user
+2020-12-03 11:05:49 [main] ERROR ticketDao:124 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -10574,7 +10574,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:111) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:111) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:121) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -10674,7 +10674,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:05:49 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:05:49 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -10687,7 +10687,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.updateTicketTest(ParkingDataBaseIT.java:139) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -10786,7 +10786,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:05:49 [main] ERROR TicketDAO:93 - Error saving ticket info
+2020-12-03 11:05:49 [main] ERROR ticketDao:93 - Error saving ticket info
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -10799,7 +10799,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.updateTicket(TicketDAO.java:85) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.updateTicket(ticketDao.java:85) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.updateTicketTest(ParkingDataBaseIT.java:141) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -11125,7 +11125,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:05:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:05:50 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:05:50 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -11138,7 +11138,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:100) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -11237,7 +11237,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:05:50 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:05:50 [main] ERROR TicketDAO:124 - Error fetching recurrent user
+2020-12-03 11:05:50 [main] ERROR ticketDao:124 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -11250,7 +11250,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:111) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:111) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:102) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -11945,7 +11945,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:07:21 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:07:21 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -11958,7 +11958,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:119) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -12057,7 +12057,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:07:21 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-12-03 11:07:21 [main] ERROR ticketDao:127 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -12070,7 +12070,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:121) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -12170,7 +12170,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:07:21 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:07:21 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -12183,7 +12183,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.updateTicketTest(ParkingDataBaseIT.java:139) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -12282,7 +12282,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:07:21 [main] ERROR TicketDAO:95 - Error saving ticket info
+2020-12-03 11:07:21 [main] ERROR ticketDao:95 - Error saving ticket info
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -12295,7 +12295,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.updateTicket(TicketDAO.java:87) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.updateTicket(ticketDao.java:87) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.updateTicketTest(ParkingDataBaseIT.java:141) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -12621,7 +12621,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:07:21 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:07:21 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -12634,7 +12634,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:100) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -12733,7 +12733,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:07:21 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:07:21 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-12-03 11:07:21 [main] ERROR ticketDao:127 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -12746,7 +12746,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:102) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -13441,7 +13441,7 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
 2020-12-03 11:13:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:13:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:13:30 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:13:30 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -13454,7 +13454,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:119) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -13553,7 +13553,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:13:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:13:30 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-12-03 11:13:30 [main] ERROR ticketDao:127 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -13566,7 +13566,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkNotRecurringUserTest(ParkingDataBaseIT.java:121) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -13666,7 +13666,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-12-03 11:13:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:13:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:13:30 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:13:30 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -13679,7 +13679,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.updateTicketTest(ParkingDataBaseIT.java:139) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -13778,7 +13778,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:13:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:13:30 [main] ERROR TicketDAO:95 - Error saving ticket info
+2020-12-03 11:13:30 [main] ERROR ticketDao:95 - Error saving ticket info
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -13791,7 +13791,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.updateTicket(TicketDAO.java:87) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.updateTicket(ticketDao.java:87) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.updateTicketTest(ParkingDataBaseIT.java:141) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -14117,7 +14117,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	... 75 more
 2020-12-03 11:13:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
 2020-12-03 11:13:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:13:31 [main] ERROR TicketDAO:39 - Error fetching next available slot
+2020-12-03 11:13:31 [main] ERROR ticketDao:39 - Error fetching next available slot
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -14130,7 +14130,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.saveTicket(TicketDAO.java:28) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.saveTicket(ticketDao.java:28) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:100) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -14229,7 +14229,7 @@ Caused by: java.net.ConnectException: Connexion refusée (Connection refused)
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817) ~[mysql-connector-java-8.0.17.jar:8.0.17]
 	... 75 more
 2020-12-03 11:13:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
-2020-12-03 11:13:31 [main] ERROR TicketDAO:127 - Error fetching recurrent user
+2020-12-03 11:13:31 [main] ERROR ticketDao:127 - Error fetching recurrent user
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -14242,7 +14242,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
 	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
 	at com.parkit.parkingsystem.integration.config.DataBaseTestConfig.getConnection(DataBaseTestConfig.java:39) ~[test-classes/:?]
-	at com.parkit.parkingsystem.dao.TicketDAO.checkRecurringUser(TicketDAO.java:114) ~[classes/:?]
+	at com.parkit.parkingsystem.dao.ticketDao.checkRecurringUser(ticketDao.java:114) ~[classes/:?]
 	at com.parkit.parkingsystem.integration.ParkingDataBaseIT.checkRecurringUserTest(ParkingDataBaseIT.java:102) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
@@ -18224,6 +18224,1031 @@ java.lang.Exception: Error fetching parking number from DB. Parking slots might 
 java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
 	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:79) ~[classes/:?]
 	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:146) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-03 17:24:44 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:46 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:46 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:46 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:46 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:47 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:60 - Closing Prepared Statement
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:60 - Closing Prepared Statement
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:60 - Closing Prepared Statement
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:50 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:50 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:50 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:50 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:50 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:50 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:52 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:52 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:52 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:52 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:52 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:52 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:53 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:54 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:57 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:60 - Closing Prepared Statement
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:24:59 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:19 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:22 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:22 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:22 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:22 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:22 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:23 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:24 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:26 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:26 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:26 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:26 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:26 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:26 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:27 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:27 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:27 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:27 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:27 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:27 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:28 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:28 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:29 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:29 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:29 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:29 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:29 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:30 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:32 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:32 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:32 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:32 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:33 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:33 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:33 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:33 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:33 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:41:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:26 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:29 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:29 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:29 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:29 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:29 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:31 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:32 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:32 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:32 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:33 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:33 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:33 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:33 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:33 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:33 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:34 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:34 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:36 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:37 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:40 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:40 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:40 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:40 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:40 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-03 17:58:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-03 18:11:21 [main] ERROR ParkingService:84 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:79) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:146) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-04 14:19:52 [main] ERROR ParkingService:84 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:79) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:146) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-04 15:41:45 [main] ERROR ParkingService:84 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:79) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:146) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-04 15:42:33 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:36 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:36 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:36 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:36 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:36 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:37 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:38 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:39 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:40 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:40 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:40 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:40 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:40 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:40 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:41 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:41 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:41 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:41 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:42 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:42 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:43 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:45 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:46 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:46 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:46 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:46 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:46 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:46 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:47 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:47 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:48 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:48 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:48 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 15:42:49 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:27 [main] ERROR ParkingService:102 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:97) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:143) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-04 16:34:51 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:54 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:54 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:55 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:55 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:55 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:56 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:57 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:34:58 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:34:58 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:00 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:00 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:00 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:00 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:00 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:00 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:01 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:03 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:04 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:04 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:04 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:04 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:04 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:04 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:06 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:06 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:06 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:06 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:06 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:37 - Create DB connection
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:72 - Closing Result Set
+2020-12-04 16:35:07 [main] INFO  DataBaseTestConfig:48 - Closing DB connection
+2020-12-04 16:40:47 [main] ERROR ParkingService:102 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:97) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:143) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-04 17:08:46 [main] ERROR ParkingService:102 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:97) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:143) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688) ~[junit-platform-commons-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65) ~[junit-jupiter-engine-5.7.0.jar:5.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127) ~[junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) [junit-platform-engine-1.7.0.jar:1.7.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111) [junit-platform-surefire-provider-1.2.0.jar:1.2.0]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+2020-12-04 17:40:30 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:33 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:33 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:33 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:33 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:33 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:34 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:35 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:36 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:36 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:36 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:36 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:36 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:36 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:38 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:38 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:38 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:38 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:38 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:39 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:39 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:39 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:39 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:39 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:39 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:41 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:42 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:42 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:42 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:42 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:42 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:42 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:43 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:44 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:45 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:45 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:45 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:40:45 [main] INFO  DataBaseTestConfig:35 - Create DB connection
+2020-12-04 17:40:45 [main] INFO  DataBaseTestConfig:70 - Closing Result Set
+2020-12-04 17:40:45 [main] INFO  DataBaseTestConfig:46 - Closing DB connection
+2020-12-04 17:41:10 [main] ERROR ParkingService:102 - Error fetching next available parking slot
+java.lang.Exception: Error fetching parking number from DB. Parking slots might be full
+	at com.parkit.parkingsystem.service.ParkingService.getNextParkingNumberIfAvailable(ParkingService.java:97) ~[classes/:?]
+	at com.parkit.parkingsystem.service.ParkingServiceTest.getNextParkingNumberIfNotAvailableTest(ParkingServiceTest.java:143) ~[test-classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
