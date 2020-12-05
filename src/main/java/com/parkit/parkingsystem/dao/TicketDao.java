@@ -4,7 +4,6 @@ import com.parkit.parkingsystem.constants.DBconstants;
 import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
-import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -24,7 +23,7 @@ public class TicketDao extends Dao {
     try {
       setUpDB(DBconstants.GET_TICKET);
       ps.setString(1, vehicleRegNumber);
-      ResultSet rs = ps.executeQuery();
+      rs = ps.executeQuery();
       if (rs.next()) {
         ticket = new Ticket();
         ParkingType parkingType = ParkingType.valueOf(rs.getString(6));
@@ -99,7 +98,7 @@ public class TicketDao extends Dao {
     try {
       setUpDB(DBconstants.COUNT_OCCURRENCES_OF_ONE_VEHICLE_REG_NUMBER);
       ps.setString(1, vehicleRegNumber);
-      ResultSet rs = ps.executeQuery();
+      rs = ps.executeQuery();
       if (rs.next()) {
         int nb = rs.getInt(1);
         if (nb > 0) {

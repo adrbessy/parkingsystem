@@ -3,7 +3,7 @@ package com.parkit.parkingsystem.dao;
 import com.parkit.parkingsystem.config.DataBaseConfig;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.ResultSet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +13,7 @@ public class Dao {
   public DataBaseConfig dataBaseConfig = new DataBaseConfig();
   public Connection con = null;
   PreparedStatement ps = null;
+  ResultSet rs = null;
 
   /**
    * set up the database.
@@ -33,14 +34,17 @@ public class Dao {
    * 
    */
   public void tearDown() {
-    if (ps != null) {
-      try {
-        ps.close();
-      } catch (SQLException e) {
-        logger.error("The request cannot be closed", e);
+    try {
+      if (rs != null) {
+        rs.close();
       }
+      if (ps != null) {
+        ps.close();
+      }
+      dataBaseConfig.closeConnection(con);
+    } catch (Exception e) {
+      logger.error("The request cannot be closed", e);
     }
-    dataBaseConfig.closeConnection(con);
   }
 
 }
