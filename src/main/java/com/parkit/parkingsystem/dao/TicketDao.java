@@ -35,12 +35,13 @@ public class TicketDao extends Dao {
         ticket.setInTime(rs.getTimestamp(4));
         ticket.setOutTime(rs.getTimestamp(5));
       }
-      dataBaseConfig.closeResultSet(rs);
+      // dataBaseConfig.closeResultSet(rs);
       // dataBaseConfig.closePreparedStatement(ps);
     } catch (Exception ex) {
       logger.error("Error fetching next available slot", ex);
     } finally {
-      dataBaseConfig.closeConnection(con);
+      // dataBaseConfig.closeConnection(con);
+      tearDown();
     }
     return ticket;
   }
