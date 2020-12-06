@@ -163,21 +163,47 @@ public class ParkingDataBaseIT {
   }
 
   @Test
-  @DisplayName("Verify that when the user leaves the parking, the price is not null")
+  @DisplayName("Verify that when the user leaves the parking, the price is not null (more exactly 0)")
   public void testExitAcar() {
+    // ARRANGE
+    ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDao);
+    ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, true);
+    Ticket ticket = new Ticket();
+    Date inTime = new Date();
+    inTime.setTime(System.currentTimeMillis() - (45 * 60 * 1000L));
+    ticket.setVehicleRegNumber("ABCDEF");
+    ticket.setParkingSpot(parkingSpot);
+    ticket.setId(1);
+    ticket.setPrice(0);
+    ticket.setInTime(inTime);
+    ticket.setOutTime(null);
+    ticketDao.saveTicket(ticket);
+    ticketDao.updateTicket(ticket);
+    when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
+
+    // ACT
+    parkingService.processExitingVehicle();
+
+    // ASSERT
+    ticket = ticketDao.getTicket("ABCDEF");
+    assertEquals(true, ticket.getPrice() > 0);
+  }
+
+  @Test
+  @DisplayName("Verify that when the user leaves the parking, the price is not null (more exactly 0)")
+  public void testParkingThenExitAcar() {
     // ARRANGE
     when(inputReaderUtil.readSelection()).thenReturn(1);
     when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
-    testParkingACar();
     ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDao);
+    parkingService.processIncomingVehicle();
 
     // ACT
     parkingService.processExitingVehicle();
 
     // ASSERT
     Ticket ticket = ticketDao.getTicket("ABCDEF");
-    assertEquals(true, ticket.getPrice() >= 0);
-    // assertEquals(true, ticket.getOutTime() != null); //doesn't work
+    assertEquals(true, ticket.getPrice() == 0);
   }
 
 }

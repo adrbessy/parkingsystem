@@ -7,6 +7,7 @@ import com.parkit.parkingsystem.dao.TicketDao;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.util.InputReaderUtil;
+import java.text.DecimalFormat;
 import java.util.Date;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -64,7 +65,7 @@ public class ParkingService {
         System.out.println("Generated Ticket and saved in DB");
         if (ticket.getRecurringUser()) {
           System.out.println(
-              "Welcome back! "
+              "\nWelcome back! "
                   + "As a recurring user of our parking lot, you'll benefit from a 5% discount.");
         }
         System.out.println("Please park your vehicle in spot number:" + parkingSpot.getId());
@@ -77,7 +78,7 @@ public class ParkingService {
   }
 
   public String getVehicleRegNumber() {
-    System.out.println("Please type the vehicle registration number and press enter key");
+    System.out.println("\nPlease type the vehicle registration number and press enter key");
     return inputReaderUtil.readVehicleRegistrationNumber();
   }
 
@@ -144,7 +145,14 @@ public class ParkingService {
         ParkingSpot parkingSpot = ticket.getParkingSpot();
         parkingSpot.setAvailable(true);
         parkingSpotDao.updateParking(parkingSpot);
-        System.out.println("Please pay the parking fare:" + ticket.getPrice());
+        double priceToPay = ticket.getPrice();
+        DecimalFormat f = new DecimalFormat();
+        f.setMaximumFractionDigits(2);
+        if (priceToPay == 0.0) {
+          System.out.println("\nNothing to pay!");
+        } else {
+          System.out.println("\nPlease pay the parking fare:" + f.format(priceToPay));
+        }
         System.out.println(
             "Recorded out-time for vehicle number:"
                 + ticket.getVehicleRegNumber() + " is:" + outTime);

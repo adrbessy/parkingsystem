@@ -139,11 +139,7 @@ public class ParkingServiceTest {
     when(parkingSpotDao.getNextAvailableSlot(any(ParkingType.class))).thenReturn(-1);
 
     // THEN
-    try {
-      parkingService.getNextParkingNumberIfAvailable();
-    } catch (Exception e) {
-      assert (e.getMessage().contains("Error"));
-    }
+    assertThat(parkingService.getNextParkingNumberIfAvailable()).isEqualTo(null);
   }
 
 }

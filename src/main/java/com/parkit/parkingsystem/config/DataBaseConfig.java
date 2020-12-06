@@ -34,7 +34,7 @@ public class DataBaseConfig {
     String user = prop.getProperty("username");
     String pass = prop.getProperty("password");
     String port = prop.getProperty("port");
-
+    System.out.println("");
     logger.info("Create DB connection");
     Class.forName("com.mysql.cj.jdbc.Driver");
     return DriverManager.getConnection(

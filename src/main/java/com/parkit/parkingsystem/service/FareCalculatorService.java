@@ -33,7 +33,6 @@ public class FareCalculatorService {
     } else {
       switch (parkingType) {
         case CAR: {
-
           if (recurringUser) {
             return ((diffInHours * Fare.CAR_RATE_PER_HOUR)
                 - 5 * (diffInHours * Fare.CAR_RATE_PER_HOUR) / 100);
