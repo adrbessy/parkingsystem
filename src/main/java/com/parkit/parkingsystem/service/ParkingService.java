@@ -7,7 +7,6 @@ import com.parkit.parkingsystem.dao.TicketDao;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.util.InputReaderUtil;
-import java.text.DecimalFormat;
 import java.util.Date;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -140,18 +139,17 @@ public class ParkingService {
       ticket.setOutTime(outTime);
       double price = fareCalculatorService.calculateFare(ticket.getOutTime(), ticket.getInTime(),
           ticket.getParkingSpot().getParkingType(), ticket.getRecurringUser());
+      price = Math.round(price * 100.0) / 100.0;
       ticket.setPrice(price);
       if (ticketDao.updateTicket(ticket)) {
         ParkingSpot parkingSpot = ticket.getParkingSpot();
         parkingSpot.setAvailable(true);
         parkingSpotDao.updateParking(parkingSpot);
         double priceToPay = ticket.getPrice();
-        DecimalFormat f = new DecimalFormat();
-        f.setMaximumFractionDigits(2);
         if (priceToPay == 0.0) {
           System.out.println("\nNothing to pay!");
         } else {
-          System.out.println("\nPlease pay the parking fare:" + f.format(priceToPay));
+          System.out.println("\nPlease pay the parking fare:" + priceToPay);
         }
         System.out.println(
             "Recorded out-time for vehicle number:"
