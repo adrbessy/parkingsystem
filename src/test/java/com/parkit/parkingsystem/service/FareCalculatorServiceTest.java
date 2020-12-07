@@ -7,7 +7,6 @@ import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.constants.ParkingType;
 import java.util.Date;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -20,10 +19,6 @@ public class FareCalculatorServiceTest {
   @BeforeAll
   private static void setUp() {
     fareCalculatorService = new FareCalculatorService();
-  }
-
-  @BeforeEach
-  private void setUpPerTest() {
   }
 
   /**

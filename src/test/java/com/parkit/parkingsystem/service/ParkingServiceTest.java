@@ -25,7 +25,7 @@ public class ParkingServiceTest {
 
   ParkingService parkingService;
 
-  private Ticket ticket;
+  Ticket ticket;
 
   @Mock
   InputReaderUtil inputReaderUtil;
@@ -37,9 +37,8 @@ public class ParkingServiceTest {
   TicketDao ticketDao;
 
   @BeforeEach
-  private void setUp() {
+  private void setUpPerTest() {
     parkingService = new ParkingService(inputReaderUtil, parkingSpotDao, ticketDao);
-    ticket = new Ticket();
   }
 
   @Test
@@ -90,6 +89,7 @@ public class ParkingServiceTest {
   @Test
   public void processExitingVehicleTest() {
     // GIVEN
+    ticket = new Ticket();
     when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
     ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
     ticket.setInTime(new Date(System.currentTimeMillis() - (60 * 60 * 1000)));
@@ -108,6 +108,7 @@ public class ParkingServiceTest {
   @Test
   public void processExitingVehicleUpdateTicketFalseTest() {
     // GIVEN
+    ticket = new Ticket();
     when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
     ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
     ticket.setInTime(new Date(System.currentTimeMillis() - (60 * 60 * 1000)));
