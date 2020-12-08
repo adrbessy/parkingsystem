@@ -35,13 +35,13 @@ public class TicketDao extends Dao {
         ticket.setInTime(rs.getTimestamp(4));
         ticket.setOutTime(rs.getTimestamp(5));
       }
-      // dataBaseConfig.closeResultSet(rs);
       // dataBaseConfig.closePreparedStatement(ps);
     } catch (Exception ex) {
       logger.error("Error fetching next available slot", ex);
     } finally {
-      // dataBaseConfig.closeConnection(con);
-      tearDown();
+      dataBaseConfig.closeResultSet(rs);
+      dataBaseConfig.closePreparedStatement(ps);
+      dataBaseConfig.closeConnection(con);
     }
     return ticket;
   }
@@ -64,7 +64,8 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error fetching next available slot", ex);
     } finally {
-      tearDown();
+      dataBaseConfig.closePreparedStatement(ps);
+      dataBaseConfig.closeConnection(con);
     }
     return false;
   }
@@ -85,7 +86,8 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error saving ticket info", ex);
     } finally {
-      tearDown();
+      dataBaseConfig.closePreparedStatement(ps);
+      dataBaseConfig.closeConnection(con);
     }
     return false;
   }
@@ -111,7 +113,9 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error fetching recurrent user", ex);
     } finally {
-      tearDown();
+      dataBaseConfig.closeResultSet(rs);
+      dataBaseConfig.closePreparedStatement(ps);
+      dataBaseConfig.closeConnection(con);
     }
     return false;
   }

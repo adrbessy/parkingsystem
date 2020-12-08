@@ -21,11 +21,12 @@ public class ParkingSpotDao extends Dao {
       if (rs.next()) {
         result = rs.getInt(1);
       }
-      dataBaseConfig.closeResultSet(rs);
     } catch (Exception ex) {
       logger.error("Error fetching next available slot", ex);
     } finally {
-      tearDown();
+      dataBaseConfig.closeResultSet(rs);
+      dataBaseConfig.closePreparedStatement(ps);
+      dataBaseConfig.closeConnection(con);
     }
     return result;
   }
@@ -47,7 +48,8 @@ public class ParkingSpotDao extends Dao {
       logger.error("Error updating parking info", ex);
       return false;
     } finally {
-      tearDown();
+      dataBaseConfig.closePreparedStatement(ps);
+      dataBaseConfig.closeConnection(con);
     }
   }
 
