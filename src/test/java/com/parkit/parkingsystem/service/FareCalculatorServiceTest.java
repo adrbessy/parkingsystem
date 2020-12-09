@@ -128,14 +128,14 @@ public class FareCalculatorServiceTest {
     Date outTime = new Date();
     // 1 hour parking time should give 24 *
     // parking fare per hour
-    outTime.setTime(System.currentTimeMillis() + (1 * 60 * 60 * 1000));
+    outTime.setTime(System.currentTimeMillis() + (60 * 60 * 1000));
 
     // ACT
     double price = fareCalculatorService.calculateFare(outTime, inTime, ParkingType.CAR, true);
 
     // ASSERT
-    assertThat(price).isEqualTo(((1 * Fare.CAR_RATE_PER_HOUR)
-        - 5 * (1 * Fare.CAR_RATE_PER_HOUR) / 100));
+    assertThat(price).isEqualTo(((Fare.CAR_RATE_PER_HOUR)
+        - 5 * (Fare.CAR_RATE_PER_HOUR) / 100));
     // 5% discount
   }
 
@@ -144,14 +144,14 @@ public class FareCalculatorServiceTest {
     // ARRANGE
     Date inTime = new Date();
     Date outTime = new Date();
-    outTime.setTime(System.currentTimeMillis() + (1 * 60 * 60 * 1000));
+    outTime.setTime(System.currentTimeMillis() + (60 * 60 * 1000));
 
     // ACT
     double price = fareCalculatorService.calculateFare(outTime, inTime, ParkingType.BIKE, true);
 
     // ASSERT
-    assertThat(price).isEqualTo(((1 * Fare.BIKE_RATE_PER_HOUR)
-        - 5 * (1 * Fare.BIKE_RATE_PER_HOUR) / 100));
+    assertThat(price).isEqualTo(((Fare.BIKE_RATE_PER_HOUR)
+        - 5 * (Fare.BIKE_RATE_PER_HOUR) / 100));
     // 5% discount
   }
 

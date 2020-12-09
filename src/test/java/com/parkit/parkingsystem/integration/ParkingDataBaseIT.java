@@ -186,23 +186,25 @@ public class ParkingDataBaseIT {
 
     // ASSERT
     ticket = ticketDao.getTicket("ABCDEF");
+    assertEquals(true, ticket != null);
     assertEquals(true, ticket.getPrice() > 0);
   }
 
   @Test
-  @DisplayName("Verify that when the user leaves the parking, the price is not null (more exactly 0)")
+  @DisplayName("Verify that when the user comes into then leaves the parking, the price is not null (more exactly 0)")
   public void testParkingThenExitAcar() {
     // ARRANGE
     when(inputReaderUtil.readSelection()).thenReturn(1);
     when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
     ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDao);
-    parkingService.processIncomingVehicle();
 
     // ACT
+    parkingService.processIncomingVehicle();
     parkingService.processExitingVehicle();
 
     // ASSERT
     Ticket ticket = ticketDao.getTicket("ABCDEF");
+    assertEquals(true, ticket != null);
     assertEquals(true, ticket.getPrice() == 0);
   }
 
