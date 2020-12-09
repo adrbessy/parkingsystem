@@ -1,11 +1,12 @@
 package com.parkit.parkingsystem.integration.service;
 
+import com.parkit.parkingsystem.dao.Dao;
 import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DataBasePrepareService {
+public class DataBasePrepareService extends Dao {
 
   DataBaseTestConfig dataBaseTestConfig = new DataBaseTestConfig();
 
@@ -47,7 +48,7 @@ public class DataBasePrepareService {
           e.printStackTrace();
         }
       }
-      dataBaseTestConfig.closeConnection(connection);
+      closeConnection(connection);
     }
   }
 

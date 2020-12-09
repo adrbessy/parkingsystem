@@ -126,8 +126,6 @@ public class FareCalculatorServiceTest {
     // ARRANGE
     Date inTime = new Date();
     Date outTime = new Date();
-    // 1 hour parking time should give 24 *
-    // parking fare per hour
     outTime.setTime(System.currentTimeMillis() + (60 * 60 * 1000));
 
     // ACT

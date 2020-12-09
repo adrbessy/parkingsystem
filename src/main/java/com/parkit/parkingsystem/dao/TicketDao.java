@@ -39,9 +39,9 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error fetching next available slot", ex);
     } finally {
-      dataBaseConfig.closeResultSet(rs);
-      dataBaseConfig.closePreparedStatement(ps);
-      dataBaseConfig.closeConnection(con);
+      closeResultSet(rs);
+      closePreparedStatement(ps);
+      closeConnection(con);
     }
     return ticket;
   }
@@ -64,8 +64,8 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error fetching next available slot", ex);
     } finally {
-      dataBaseConfig.closePreparedStatement(ps);
-      dataBaseConfig.closeConnection(con);
+      closePreparedStatement(ps);
+      closeConnection(con);
     }
     return false;
   }
@@ -86,8 +86,8 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error saving ticket info", ex);
     } finally {
-      dataBaseConfig.closePreparedStatement(ps);
-      dataBaseConfig.closeConnection(con);
+      closePreparedStatement(ps);
+      closeConnection(con);
     }
     return false;
   }
@@ -113,9 +113,9 @@ public class TicketDao extends Dao {
     } catch (Exception ex) {
       logger.error("Error fetching recurrent user", ex);
     } finally {
-      dataBaseConfig.closeResultSet(rs);
-      dataBaseConfig.closePreparedStatement(ps);
-      dataBaseConfig.closeConnection(con);
+      closeResultSet(rs);
+      closePreparedStatement(ps);
+      closeConnection(con);
     }
     return false;
   }
