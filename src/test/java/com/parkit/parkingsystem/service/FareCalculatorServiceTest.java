@@ -26,7 +26,7 @@ public class FareCalculatorServiceTest {
    * 
    */
   @ParameterizedTest(name = "Test for {0} minutes.")
-  @ValueSource(ints = { 45, 60, 900, 1440, 1500, 2340, 3000 })
+  @ValueSource(ints = { 30, 45, 60, 900, 1440, 1500, 2340, 10000, 100000 })
   public void testCalculateFareCar(int arg) {
     // ARRANGE
     Date inTime = new Date();
@@ -64,7 +64,7 @@ public class FareCalculatorServiceTest {
    * 
    */
   @ParameterizedTest(name = "Test for {0} minutes.")
-  @ValueSource(ints = { 45, 60, 900, 1440, 1500, 2340, 3000 })
+  @ValueSource(ints = { 30, 45, 60, 900, 1440, 1500, 2340, 10000, 100000 })
   public void testCalculateFareBike(int arg) {
     // ARRANGE
     Date inTime = new Date();

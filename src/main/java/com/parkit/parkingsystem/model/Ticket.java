@@ -64,7 +64,7 @@ public class Ticket {
     this.recurringUser = b;
   }
 
-  public boolean getRecurringUser() {
+  public boolean isRecurringUser() {
     return recurringUser;
   }
 

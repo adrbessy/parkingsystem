@@ -62,7 +62,7 @@ public class ParkingService {
         ticket.setRecurringUser(recurringUser);
         ticketDao.saveTicket(ticket);
         System.out.println("Generated Ticket and saved in DB");
-        if (ticket.getRecurringUser()) {
+        if (ticket.isRecurringUser()) {
           System.out.println(
               "\nWelcome back! "
                   + "As a recurring user of our parking lot, you'll benefit from a 5% discount.");
@@ -76,6 +76,10 @@ public class ParkingService {
     }
   }
 
+  /**
+   * function to get the vehicle registration number.
+   * 
+   */
   public String getVehicleRegNumber() {
     System.out.println("\nPlease type the vehicle registration number and press enter key");
     return inputReaderUtil.readVehicleRegistrationNumber();
@@ -138,7 +142,7 @@ public class ParkingService {
       Date outTime = new Date();
       ticket.setOutTime(outTime);
       double price = fareCalculatorService.calculateFare(ticket.getOutTime(), ticket.getInTime(),
-          ticket.getParkingSpot().getParkingType(), ticket.getRecurringUser());
+          ticket.getParkingSpot().getParkingType(), ticket.isRecurringUser());
       price = Math.round(price * 100.0) / 100.0;
       ticket.setPrice(price);
       if (ticketDao.updateTicket(ticket)) {
@@ -147,7 +151,7 @@ public class ParkingService {
         parkingSpotDao.updateParking(parkingSpot);
         double priceToPay = ticket.getPrice();
         if (priceToPay == 0.0) {
-          System.out.println("\nNothing to pay!");
+          System.out.println("\nLess than 30 minutes: Nothing to pay!");
         } else {
           System.out.println("\nPlease pay the parking fare:" + priceToPay);
         }

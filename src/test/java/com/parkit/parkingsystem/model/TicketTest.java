@@ -57,7 +57,7 @@ class TicketTest {
   @Test
   void getRecurringUserTest() {
     ticket.setRecurringUser(true);
-    assertThat(ticket.getRecurringUser()).isEqualTo(true);
+    assertThat(ticket.isRecurringUser()).isEqualTo(true);
   }
 
 }

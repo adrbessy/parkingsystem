@@ -98,7 +98,6 @@ public class ParkingServiceTest {
     when(ticketDao.getTicket(anyString())).thenReturn(ticket);
     when(ticketDao.updateTicket(any(Ticket.class))).thenReturn(true);
     when(parkingSpotDao.updateParking(any(ParkingSpot.class))).thenReturn(true);
-    parkingService = new ParkingService(inputReaderUtil, parkingSpotDao, ticketDao);
 
     // THEN
     parkingService.processExitingVehicle();
@@ -116,7 +115,6 @@ public class ParkingServiceTest {
     ticket.setVehicleRegNumber("ABCDEF");
     when(ticketDao.getTicket(anyString())).thenReturn(ticket);
     when(ticketDao.updateTicket(any(Ticket.class))).thenReturn(false);
-    parkingService = new ParkingService(inputReaderUtil, parkingSpotDao, ticketDao);
 
     // THEN
     parkingService.processExitingVehicle();
@@ -141,6 +139,16 @@ public class ParkingServiceTest {
 
     // THEN
     assertThat(parkingService.getNextParkingNumberIfAvailable()).isEqualTo(null);
+  }
+
+  @Test
+  public void getNextParkingNumberIfAvailableTest() {
+    // GIVEN
+    when(inputReaderUtil.readSelection()).thenReturn(1);
+    when(parkingSpotDao.getNextAvailableSlot(any(ParkingType.class))).thenReturn(1);
+
+    // THEN
+    assertThat(parkingService.getNextParkingNumberIfAvailable()).isNotEqualTo(null);
   }
 
 }

@@ -163,7 +163,7 @@ public class ParkingDataBaseIT {
   }
 
   @Test
-  @DisplayName("Verify that when the user leaves the parking, the price is not null (more exactly 0)")
+  @DisplayName("Verify that when the user leaves the parking, the price and outime are not null")
   public void testExitAcar() {
     // ARRANGE
     ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDao);
@@ -188,10 +188,11 @@ public class ParkingDataBaseIT {
     ticket = ticketDao.getTicket("ABCDEF");
     assertEquals(true, ticket != null);
     assertEquals(true, ticket.getPrice() > 0);
+    assertEquals(true, ticket.getOutTime() != null);
   }
 
   @Test
-  @DisplayName("Verify that when the user comes into then leaves the parking, the price is not null (more exactly 0)")
+  @DisplayName("Verify that when the user comes into then leaves the parking, the price and outime are not null")
   public void testParkingThenExitAcar() {
     // ARRANGE
     when(inputReaderUtil.readSelection()).thenReturn(1);
@@ -200,12 +201,18 @@ public class ParkingDataBaseIT {
 
     // ACT
     parkingService.processIncomingVehicle();
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
     parkingService.processExitingVehicle();
 
     // ASSERT
     Ticket ticket = ticketDao.getTicket("ABCDEF");
     assertEquals(true, ticket != null);
     assertEquals(true, ticket.getPrice() == 0);
+    assertEquals(true, ticket.getOutTime() != null);
   }
 
 }
