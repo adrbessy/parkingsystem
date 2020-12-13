@@ -23,18 +23,18 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class ParkingServiceTest {
 
-  ParkingService parkingService;
+  private ParkingService parkingService;
 
-  Ticket ticket;
-
-  @Mock
-  InputReaderUtil inputReaderUtil;
+  private Ticket ticket;
 
   @Mock
-  ParkingSpotDao parkingSpotDao;
+  private InputReaderUtil inputReaderUtil;
 
   @Mock
-  TicketDao ticketDao;
+  private ParkingSpotDao parkingSpotDao;
+
+  @Mock
+  private TicketDao ticketDao;
 
   @BeforeEach
   private void setUpPerTest() {

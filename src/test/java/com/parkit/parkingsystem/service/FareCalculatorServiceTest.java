@@ -132,8 +132,8 @@ public class FareCalculatorServiceTest {
     double price = fareCalculatorService.calculateFare(outTime, inTime, ParkingType.CAR, true);
 
     // ASSERT
-    assertThat(price).isEqualTo(((Fare.CAR_RATE_PER_HOUR)
-        - 5 * (Fare.CAR_RATE_PER_HOUR) / 100));
+    assertThat(Math.round(price * 100.0) / 100.0).isEqualTo(Math.round(((Fare.CAR_RATE_PER_HOUR)
+        - 5 * (Fare.CAR_RATE_PER_HOUR) / 100) * 100.0) / 100.0);
     // 5% discount
   }
 
