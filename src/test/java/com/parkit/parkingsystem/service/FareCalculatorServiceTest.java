@@ -37,7 +37,8 @@ public class FareCalculatorServiceTest {
     double price = fareCalculatorService.calculateFare(outTime, inTime, ParkingType.CAR, false);
 
     // ASSERT
-    assertThat(price).isEqualTo(((double) arg) / 60 * Fare.CAR_RATE_PER_HOUR);
+    assertThat(Math.round(price * 100.0) / 100.0)
+        .isEqualTo(Math.round(((double) arg) / 60 * Fare.CAR_RATE_PER_HOUR * 100.0) / 100.0);
   }
 
   /**
@@ -75,7 +76,8 @@ public class FareCalculatorServiceTest {
     double price = fareCalculatorService.calculateFare(outTime, inTime, ParkingType.BIKE, false);
 
     // ASSERT
-    assertThat(price).isEqualTo(((double) arg) / 60 * Fare.BIKE_RATE_PER_HOUR);
+    assertThat(Math.round(price * 100.0) / 100.0)
+        .isEqualTo(Math.round(((double) arg) / 60 * Fare.BIKE_RATE_PER_HOUR * 100.0) / 100.0);
   }
 
   /**
@@ -148,8 +150,8 @@ public class FareCalculatorServiceTest {
     double price = fareCalculatorService.calculateFare(outTime, inTime, ParkingType.BIKE, true);
 
     // ASSERT
-    assertThat(price).isEqualTo(((Fare.BIKE_RATE_PER_HOUR)
-        - 5 * (Fare.BIKE_RATE_PER_HOUR) / 100));
+    assertThat(Math.round(price * 100.0) / 100.0).isEqualTo(Math.round(((Fare.BIKE_RATE_PER_HOUR)
+        - 5 * (Fare.BIKE_RATE_PER_HOUR) / 100) * 100.0) / 100.0);
     // 5% discount
   }
 
